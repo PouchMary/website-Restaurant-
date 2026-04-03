@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact & Reservations — Ember & Oak</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: { extend: {
+        fontFamily: { display: ['Playfair Display','serif'], body: ['Jost','sans-serif'] },
+        colors: {
+          ember: { 50:'#fff8f0',100:'#ffecd6',300:'#f5a455',500:'#e07520',700:'#a04f0c',900:'#5c2a04' },
+          oak:   { 50:'#f5f3ef',100:'#e8e3d8',300:'#c2b89a',500:'#8a7660',700:'#5a4e3a',900:'#2c2418' }
+        }
+      }}
+    }
+  </script>
+  <style>
+    body { font-family: 'Jost', sans-serif; }
+    h1,h2,h3,.font-display { font-family: 'Playfair Display', serif; }
+    .nav-blur { backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); }
+    .contact-hero {
+      background-image: linear-gradient(to bottom, rgba(44,36,24,0.88), rgba(44,36,24,0.6)),
+        url('https://images.unsplash.com/photo-1424847651672-bf20a4b0982b?w=1400&q=80');
+      background-size: cover; background-position: center;
+    }
+    .divider { width: 60px; height: 2px; background: linear-gradient(90deg,#e07520,#f5a455); margin: 1rem 0; }
+    input, select, textarea { transition: border-color 0.2s, box-shadow 0.2s; }
+    input:focus, select:focus, textarea:focus { outline: none; border-color: #e07520 !important; box-shadow: 0 0 0 3px rgba(224,117,32,0.12); }
+    .field { width:100%; padding: 12px 16px; border-radius: 12px; font-size: 14px; border: 1px solid; font-family: 'Jost', sans-serif; background: transparent; }
+  </style>
+</head>
+<body class="bg-oak-50 dark:bg-oak-900 text-oak-900 dark:text-oak-100 transition-colors duration-300">
+
+  <!-- NAV -->
+  <nav class="fixed top-0 left-0 right-0 z-50 nav-blur bg-white/80 dark:bg-oak-900/80 border-b border-oak-100 dark:border-oak-700">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="index.html" class="font-display text-xl font-bold text-ember-700 dark:text-ember-300">Ember <span class="text-oak-500">&</span> Oak</a>
+      <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+        <a href="index.html" class="hover:text-ember-500 transition-colors">Home</a>
+        <a href="menu.html" class="hover:text-ember-500 transition-colors">Menu</a>
+        <a href="about.html" class="hover:text-ember-500 transition-colors">About</a>
+        <a href="contact.html" class="text-ember-500 border-b border-ember-400 pb-0.5">Contact</a>
+        <a href="auth.html" class="hover:text-ember-500 transition-colors">Login</a>
+      </div>
+      <button id="themeToggle" class="w-9 h-9 rounded-full bg-oak-100 dark:bg-oak-700 flex items-center justify-center">
+        <span id="themeIcon">🌙</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="contact-hero pt-16 py-24 text-white text-center px-6">
+    <p class="text-ember-300 text-xs tracking-widest uppercase mb-3">Book Your Experience</p>
+    <h1 class="font-display text-5xl md:text-6xl font-bold mb-4">Reserve a Table</h1>
+    <div class="w-16 h-0.5 bg-ember-400 mx-auto mb-4"></div>
+    <p class="text-white/70 max-w-sm mx-auto text-sm">We'd love to host you. Fill in the form and we'll confirm within 24 hours.</p>
+  </section>
+
+  <!-- MAIN -->
+  <section class="py-20 px-6 max-w-6xl mx-auto">
+    <div class="grid grid-cols-1 lg:grid-cols-5 gap-16">
+
+      <!-- RESERVATION FORM -->
+      <div class="lg:col-span-3">
+        <p class="text-ember-500 text-xs tracking-widest uppercase mb-2">Online Reservation</p>
+        <h2 class="font-display text-3xl font-bold mb-2">Book Your Table</h2>
+        <div class="divider"></div>
+
+        <div class="flex flex-col gap-5 mt-8">
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-medium uppercase tracking-wider text-oak-400 mb-2">First Name</label>
+              <input type="text" placeholder="John" class="field border-oak-200 dark:border-oak-600 dark:text-oak-100"/>
+            </div>
+            <div>
+              <label class="block text-xs font-medium uppercase tracking-wider text-oak-400 mb-2">Last Name</label>
+              <input type="text" placeholder="Doe" class="field border-oak-200 dark:border-oak-600 dark:text-oak-100"/>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-medium uppercase tracking-wider text-oak-400 mb-2">Email</label>
+              <input type="email" placeholder="you@example.com" class="field border-oak-200 dark:border-oak-600 dark:text-oak-100"/>
+            </div>
+            <div>
+              <label class="block text-xs font-medium uppercase tracking-wider text-oak-400 mb-2">Phone</label>
+              <input type="tel" placeholder="+1 555 000 0000" class="field border-oak-200 dark:border-oak-600 dark:text-oak-100"/>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-3 gap-4">
+            <div>
+              <label class="block text-xs font-medium uppercase tracking-wider text-oak-400 mb-2">Date</label>
+              <input type="date" class="field border-oak-200 dark:border-oak-600 dark:text-oak-100"/>
+            </div>
+            <div>
+              <label class="block text-xs font-medium uppercase tracking-wider text-oak-400 mb-2">Time</label>
+              <select class="field border-oak-200 dark:border-oak-600 dark:bg-oak-900 dark:text-oak-100">
+                <option>5:00 PM</option>
+                <option>5:30 PM</option>
+                <option>6:00 PM</option>
+                <option>6:30 PM</option>
+                <option>7:00 PM</option>
+                <option>7:30 PM</option>
+                <option>8:00 PM</option>
+                <option>8:30 PM</option>
+                <option>9:00 PM</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-xs font-medium uppercase tracking-wider text-oak-400 mb-2">Guests</label>
+              <select class="field border-oak-200 dark:border-oak-600 dark:bg-oak-900 dark:text-oak-100">
+                <option>1 Person</option>
+                <option>2 People</option>
+                <option>3 People</option>
+                <option>4 People</option>
+                <option>5 People</option>
+                <option>6 People</option>
+                <option>7+ People</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-medium uppercase tracking-wider text-oak-400 mb-2">Occasion (optional)</label>
+            <select class="field border-oak-200 dark:border-oak-600 dark:bg-oak-900 dark:text-oak-100">
+              <option value="">No special occasion</option>
+              <option>Birthday</option>
+              <option>Anniversary</option>
+              <option>Business Dinner</option>
+              <option>Date Night</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-xs font-medium uppercase tracking-wider text-oak-400 mb-2">Special Requests</label>
+            <textarea rows="4" placeholder="Dietary requirements, allergies, seating preferences..." class="field border-oak-200 dark:border-oak-600 dark:text-oak-100 resize-none"></textarea>
+          </div>
+
+          <button onclick="submitReservation()" class="w-full py-4 bg-ember-500 hover:bg-ember-700 text-white rounded-xl font-medium tracking-wide transition-colors shadow-md text-sm">
+            Confirm Reservation →
+          </button>
+        </div>
+
+        <!-- Success -->
+        <div id="successMsg" class="hidden mt-6 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-700 text-green-700 dark:text-green-300 rounded-xl p-5">
+          <p class="font-medium mb-1">✓ Reservation Request Received!</p>
+          <p class="text-sm">We'll send a confirmation to your email within 24 hours. We look forward to hosting you!</p>
+        </div>
+      </div>
+
+      <!-- CONTACT INFO -->
+      <div class="lg:col-span-2 flex flex-col gap-8">
+        <div>
+          <p class="text-ember-500 text-xs tracking-widest uppercase mb-2">Find Us</p>
+          <h2 class="font-display text-3xl font-bold mb-2">Get in Touch</h2>
+          <div class="divider"></div>
+        </div>
+
+        <div class="flex flex-col gap-6">
+          <div class="flex gap-4">
+            <div class="w-10 h-10 rounded-full bg-ember-100 dark:bg-oak-700 flex items-center justify-center flex-shrink-0 text-ember-600">📍</div>
+            <div>
+              <p class="font-medium text-sm mb-1">Address</p>
+              <p class="text-oak-400 dark:text-oak-300 text-sm">Toul Kork</p>
+            </div>
+          </div>
+          <div class="flex gap-4">
+            <div class="w-10 h-10 rounded-full bg-ember-100 dark:bg-oak-700 flex items-center justify-center flex-shrink-0 text-ember-600">📞</div>
+            <div>
+              <p class="font-medium text-sm mb-1">Phone</p>
+              <p class="text-oak-400 dark:text-oak-300 text-sm">070 965 814</p>
+            </div>
+          </div>
+          <div class="flex gap-4">
+            <div class="w-10 h-10 rounded-full bg-ember-100 dark:bg-oak-700 flex items-center justify-center flex-shrink-0 text-ember-600">✉️</div>
+            <div>
+              <p class="font-medium text-sm mb-1">Email</p>
+              <p class="text-oak-400 dark:text-oak-300 text-sm">PouchMary927@gmail.com</p>
+            </div>
+          </div>
+          <div class="flex gap-4">
+            <div class="w-10 h-10 rounded-full bg-ember-100 dark:bg-oak-700 flex items-center justify-center flex-shrink-0 text-ember-600">🕐</div>
+            <div>
+              <p class="font-medium text-sm mb-1">Hours</p>
+              <p class="text-oak-400 dark:text-oak-300 text-sm">Mon–Thu: 5:00 PM – 10:00 PM<br/>Fri–Sat: 5:00 PM – 11:00 PM<br/>Sunday: Closed</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Map placeholder -->
+        <div class="rounded-2xl overflow-hidden border border-oak-100 dark:border-oak-700 h-52 bg-oak-100 dark:bg-oak-800 flex items-center justify-center relative">
+          <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?w=600&q=70" class="w-full h-full object-cover opacity-60"/>
+          <div class="absolute inset-0 flex flex-col items-center justify-center">
+            <span class="text-3xl mb-2">📍</span>
+            <p class="text-sm font-medium">42 Ember Lane, NY</p>
+            <a href="https://maps.google.com" target="_blank" class="mt-2 text-xs text-ember-600 dark:text-ember-300 bg-white/90 dark:bg-oak-900/90 px-3 py-1 rounded-full hover:bg-white transition">Open in Maps →</a>
+          </div>
+        </div>
+
+        <!-- Social -->
+        <div>
+          <p class="text-xs font-medium uppercase tracking-wider text-oak-400 mb-4">Follow Us</p>
+          <div class="flex gap-3">
+            <a href="#" class="w-10 h-10 rounded-full border border-oak-200 dark:border-oak-600 flex items-center justify-center hover:bg-oak-100 dark:hover:bg-oak-700 transition text-sm">📷</a>
+            <a href="#" class="w-10 h-10 rounded-full border border-oak-200 dark:border-oak-600 flex items-center justify-center hover:bg-oak-100 dark:hover:bg-oak-700 transition text-sm">🐦</a>
+            <a href="#" class="w-10 h-10 rounded-full border border-oak-200 dark:border-oak-600 flex items-center justify-center hover:bg-oak-100 dark:hover:bg-oak-700 transition text-sm">📘</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="bg-oak-900 text-oak-300 py-8 px-6 text-center text-sm">
+    <p class="font-display text-white text-lg mb-1">Ember <span class="text-ember-400">&</span> Oak</p>
+    <p>&copy; 2025 All rights reserved.</p>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('themeToggle');
+    const icon = document.getElementById('themeIcon');
+    const html = document.documentElement;
+    if (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      html.classList.add('dark'); icon.textContent = '☀️';
+    }
+    toggle.addEventListener('click', () => {
+      html.classList.toggle('dark');
+      const isDark = html.classList.contains('dark');
+      icon.textContent = isDark ? '☀️' : '🌙';
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
+
+    function submitReservation() {
+      document.getElementById('successMsg').classList.remove('hidden');
+      document.getElementById('successMsg').scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  </script>
+</body>
+</html>
