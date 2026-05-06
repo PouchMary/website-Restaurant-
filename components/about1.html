@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: 'orange',
+                        },
+                        secondary: {
+                            50: '#f5f3ff',
+                            100: '#ede9fe',
+                            200: '#ddd6fe',
+                            300: '#c4b5fd',
+                            400: '#a78bfa',
+                            500: '#8b5cf6',
+                            600: '#7c3aed',
+                            700: '#6d28d9',
+                            800: '#5b21b6',
+                            900: '#4c1d95',
+                        },
+                        dark: 'orange',
+                        light: 'white'
+                    }
+                }
+            }
+        }
+    </script>
+     <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: { extend: {
+        fontFamily: { display: ['Playfair Display','serif'], body: ['Jost','sans-serif'] },
+        colors: {
+          ember: { 50:'#fff8f0',100:'#ffecd6',300:'#f5a455',500:'#e07520',700:'#a04f0c',900:'#5c2a04' },
+          oak:   { 50:'#f5f3ef',100:'#e8e3d8',300:'#c2b89a',500:'#8a7660',700:'#5a4e3a',900:'#2c2418' }
+        }
+      }}
+    }
+  </script>
+  <style>
+    body { font-family: 'Jost', sans-serif; }
+    h1,h2,h3,.font-display { font-family: 'Playfair Display', serif; }
+    .nav-blur { backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); }
+    .menu-hero {
+      background-image: linear-gradient(135deg, rgba(30,18,6,0.92) 0%, rgba(80,45,10,0.7) 100%),
+        url('https://images.unsplash.com/photo-1481931098730-318b6f776db0?w=1400&q=80');
+      background-size: cover; background-position: center;
+    }
+    .card-hover { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .card-hover:hover { transform: translateY(-4px); box-shadow: 0 16px 32px rgba(0,0,0,0.12); }
+    .filter-btn { transition: all 0.2s; }
+    .filter-btn.active { background: #e07520; color: white; border-color: #e07520; }
+    .divider { width: 60px; height: 2px; background: linear-gradient(90deg,#e07520,#f5a455); margin: 1rem auto; }
+  </style>
+</head>
+<body class="bg-white dark:bg-gray-400 text-gray-400 dark:text-white min-h-screen transition-colors duration-300">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 nav-blur bg-orange-500 dark:bg-oak-900/80 border-b border-oak-100 dark:border-oak-3000 ">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="index.html" class="font-display text-xl font-bold text-ember-700 dark:text-ember-300">Ember <span class="text-oak-500">&</span> Oak</a>
+      <div class="hidden md:flex items-center gap-8 text-lg font-medium">
+        <a href="./home.html" class="hover:text-ember-500 transition-colors">Home</a>
+        <a href="menu.html" class="text-ember-500 border-b border-ember-400 pb-0.5">Menu</a>
+        <a href="./about.html" class="hover:text-ember-500 transition-colors">About</a>
+        <a href="contact.html" class="hover:text-ember-500 transition-colors">Contact</a>
+        <a href="./login.html"class="hover:text-ember-500 transition-colors">Login</a>
+        <!-- <a href="auth.html" class="hover:text-ember-500 transition-colors"><button><link rel="stylesheet" href="./login.html">Login</button></a> -->
+  
+      </div>
+      <button id="themeToggle" class="w-9 h-9 rounded-full bg-oak-100 dark:bg-oak-700 flex items-center justify-center hover:bg-oak-200 dark:hover:bg-oak-600 transition-colors">
+        <span id="themeIcon">🌙</span>
+      </button>
+    </div>
+  </nav>
+
+    <!-- Hero Section -->
+    <header class="bg-gradient-to-r from-dark to-primary-900 bg-white dark:bg-black text-black dark:text-white  py-20">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">About Us </h1>
+            <p class="text-xl md:text-2xl max-w-3xl mx-auto opacity-90">Where human creativity meets artificial intelligence to solve tomorrow's challenges</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 py-16">
+        <!-- Our Story -->
+        <section class="mb-20">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl font-bold text-dark mb-6">Our Story</h2>
+                    <p class=" text-gray-500 dark:text-white  mb-4">La Maison began not in a restaurant, but at a family table. Our founder, Sopheap Lim, grew up watching her grandmother coax extraordinary flavors from the simplest ingredients — local herbs, fire-roasted spices, and recipes held only in memory.
+
+In 2010, she opened the doors of La Maison to share those flavors with the city she loves. What started as twelve seats in a quiet alley has grown into one of Phnom Penh's most beloved dining destinations.
+
+The soul, however, has never changed: honest cooking, warm hospitality, and a deep respect for the ingredients and traditions that make Khmer cuisine extraordinary.</p>
+
+                </div>
+                <div class="md:w-1/2">
+                    <img src="https://images.unsplash.com/photo-1629904853893-c2c8981a1dc5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="AI Neural Network Visualization" class="rounded-lg shadow-xl w-full h-auto">
+                </div>
+            </div>
+        </section>
+        
+
+        <!-- Our Mission -->
+        <section class="bg-white rounded-xl p-12 mb-20">
+            <div class="text-center max-w-4xl mx-auto">
+                <h2 class="text-3xl font-bold text-dark mb-6">Our Mission</h2>
+                <p class="text-xl text-gray-700 mb-8">To create symbiotic intelligence systems that amplify human potential while maintaining ethical boundaries and transparency.</p>
+                <div class="flex flex-wrap justify-center gap-8">
+                    <div class="bg-white p-6 rounded-lg shadow-md w-full sm:w-64">
+                        <div class="text-primary-600 mb-4">
+                            <i class="fas fa-lightbulb text-3xl"></i>
+                        </div>
+                        <h3 class="font-bold text-dark mb-2">Augmented Intelligence</h3>
+                        <p class="text-gray-600">We build tools that enhance human cognition, not replace it.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md w-full sm:w-64">
+                        <div class="text-primary-600 mb-4">
+                            <i class="fas fa-shield-alt text-3xl"></i>
+                        </div>
+                        <h3 class="font-bold text-dark mb-2">Ethical Framework</h3>
+                        <p class="text-gray-600">Every system undergoes rigorous ethical review before deployment.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md w-full sm:w-64">
+                        <div class="text-primary-600 mb-4">
+                            <i class="fas fa-project-diagram text-3xl"></i>
+                        </div>
+                        <h3 class="font-bold text-dark mb-2">Neural Synthesis</h3>
+                        <p class="text-gray-600">Our proprietary architecture mimics human neural pathways.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Team -->
+        <section class="mb-20">
+            <h2 class="text-3xl font-bold text-dark mb-12 text-center">Meet Our Leadership</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="../images/6f6f935c6bf69cd5fa0020ec2dab6e71.jpg" alt="CEO" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl text-dark mb-1">Lim Sopheap</h3>
+                        <p class="text-primary-600 font-medium mb-3">Heap chef & Founder</p>
+                        <p class="text-gray-600">Trained in both Phnom Penh and Lyon, Sopheap brings a French precision to distinctly Khmer flavors. Her menu is her autobiography.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="../images/images (211).jpg" alt="CTO" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl text-dark mb-1">Noun Ratanak</h3>
+                        <p class="text-primary-600 font-medium mb-3">Sous chef</p>
+                        <p class="text-gray-600">Ratanak's mastery of fermented flavors and fire-roasting brings depth and drama to every plate that leaves the kitchen.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="../images/images (210).jpg" alt="Chief Ethics Officer" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl text-dark mb-1">Sok Kunthea</h3>
+                        <p class="text-primary-600 font-medium mb-3">Front of house manager</p>
+                        <p class="text-gray-600">With an instinctive warmth, Kunthea ensures every guest feels at home from the moment they walk through the door.</p>
+                    </div>
+                </div>
+            </div>
+        </section>   
+    </main>
+ <!-- ABOUT Section -->
+            <div class="w-full lg:h-screen h-full m-auto flex items-center justify-cetner py-20 bg-white dark:bg-gray-500">
+                <div class="w-full h-full flex flex-col justify-center items-center sm:px-4 px-2">
+                    <!--  -->
+                    <div class="lg:w-[90%] w-full mx-auto flex flex-col lg:gap-6 lg:flex-row items-center justify-center ">
+                        <div class="relative">
+                            <!-- Side Img 1 -->
+                            <img class="absolute z-20 lg:left-[2rem] -top-4 left-[1rem] lg:w-[8rem] lg:h-[8rem] sm:w-[6rem] sm:h-[6rem] w-[3rem] h-[3rem] rounded-full" src="../images/images (2).jpg" alt="Side Image" />
+                            <!-- Side Img 2 -->
+                            <img class="absolute z-20 lg:top-[12rem] sm:top-[11rem] top-[5rem] sm:-left-[3rem] -left-[2rem] lg:w-[8rem] lg:h-[8rem] sm:w-[6rem] sm:h-[6rem] w-[3rem] h-[3rem] rounded-full" src="../images/images (8).jpg" alt="Side Image 2" />
+
+                            <!-- Side Img 3 -->
+                        <img class="absolute z-20 lg:top-[23rem] sm:top-[20.5rem] top-[10.5rem] left-[2rem] lg:w-[8rem] lg:h-[8rem] sm:w-[6rem] sm:h-[6rem] w-[3rem] h-[3rem] rounded-full" src="../images/images (12).jpg" alt="Side Image 3" />
+
+                            <!-- Main Img -->
+                            <img
+                        class="rounded-full relative object-cover right-0 lg:w-[30rem] lg:h-[30rem] sm:w-[25rem] sm:h-[25rem] w-[12rem] h-[12rem] outline sm:outline-offset-[.77em] outline-offset-[.37em] outline-orange-700"
+                        src="../images/cambodian-fish-amok_508526-98.avif" alt="About us" />
+                        </div>
+                        <!--  -->
+                        <div
+                            class="lg:w-[60%] p-4 w-full h-full shadow-xl shadow-orange-300/40 flex flex-col justify-center items-center sm:px-6 px-4 rounded-xl">
+                            <h2 class="text-4xl text-center text-orange-600 dark:text-orange-400 font-bold px-4 py-1 md:mt-0 mt-10">
+                                About Us
+                            </h2>
+                            <!-- <p class="md:text-3xl text-2xl text-center text-gray-800 dark:text-gray-200 font-bold my-5">We are
+                                Petal Haven S.C.
+                            </p> -->
+                            <p class="md:text-xl sm:text-lg text-base mt-2 text-justify sm:px-2 dark:text-gray-300">At our restaurant, we believe that great food brings people together. Every dish we serve is carefully prepared using fresh ingredients, rich flavors, and a touch of creativity. From traditional favorites to modern specialties, we create meals that satisfy both the heart and the palate. Whether you’re here for a casual lunch or a special celebration, we are dedicated to making every moment memorable.
+                                Amok is one of the most iconic dishes of Cambodia, representing the rich culture and culinary heritage of the nation. Made with fresh fish, coconut milk, and a blend of traditional Khmer spices such as lemongrass and kaffir lime, this dish is carefully steamed in banana leaves to create its unique flavor and aroma. More than just a meal, Amok reflects the identity and tradition of Cambodian cuisine, offering a taste that is both authentic and unforgettable.
+                            </p>
+
+                            <!-- button -->
+                            <button class="lg:mt-10 mt-6 lg:px-6 px-4 lg:py-4 py-2 bg-orange-600 rounded-sm lg:text-xl text-lg text-white font-semibold">Read More</button>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+<!-- Visit us section -->
+<section class="bg-white">
+    <div class="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:py-20 lg:px-8">
+        <div class="max-w-2xl lg:max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl font-extrabold text-gray-900" id="contactUs">Visit Our Location</h2>
+            <p class="mt-3 text-lg text-gray-500">Let us serve you the best</p>
+        </div>
+        <div class="mt-8 lg:mt-20">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <div class="max-w-full mx-auto rounded-lg overflow-hidden">
+                        <div class="border-t border-gray-200 px-6 py-4">
+                            <h3 class="text-lg font-bold text-gray-900">Contact</h3>
+                            <p class="mt-1 font-bold text-gray-600"><a href="tel:+123">Phone: +91
+                                    123456789</a></p>
+                            <a class="flex m-1" href="tel:+919823331842">
+                                <div class="flex-shrink-0">
+                                    <div
+                                        class="flex items-center justify-between h-10 w-30 rounded-md bg-indigo-500 text-white p-2">
+                                        <!-- Heroicon name: phone -->
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+                                        </svg>
+                                        Call now
+                                    </div>
+                                </div>
+
+                            </a>
+                        </div>
+                        <div class="px-6 py-4">
+                            <h3 class="text-lg font-medium text-gray-900">Our Address</h3>
+                            <p class="mt-1 text-gray-600">Sale galli, 60 foot road, Latur</p>
+                        </div>
+                        <div class="border-t border-gray-200 px-6 py-4">
+                            <h3 class="text-lg font-medium text-gray-900">Hours</h3>
+                            <p class="mt-1 text-gray-600">Monday - Sunday : 2pm - 9pm</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="rounded-lg overflow-hidden order-none sm:order-first">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3785.7850672491236!2d76.58802159999999!3d18.402630699999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcf83ca88e84341%3A0x841e547bf3ad066d!2zQmFwcGEgZmxvdXIgbWlsbCB8IOCkrOCkquCljeCkquCkviDgpKrgpYDgpKAg4KSX4KS_4KSw4KSj4KWALCDgpK7gpL_gpLDgpJrgpYAg4KSV4KS-4KSC4KSh4KSqIOCkhuCko-CkvyDgpLbgpYfgpLXgpL7gpK_gpL4!5e0!3m2!1sen!2sin!4v1713433597892!5m2!1sen!2sin"
+                        class="w-full" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+    <!-- Footer -->
+     <footer>
+     <div class="mt-8 bg-orange-500 dark:bg-gray-500 pt-9 py-8 px-6 text-center text-sm transition-colors duration-300">
+  <div class="mx-auto w-full max-w-[1166px] px-4 xl:px-0">
+    <div class="flex flex-col justify-between sm:px-[18px] md:flex-row md:px-10">
+      <div class="md:w-[316px]">
+        <p class="text-[18px] font-medium text-white">
+        <h1  class="text-black dark:text-white font-extrabold">
+          <span class="text-rose-600">YOUR</span>LOGO
+        </h1>
+        </p>
+        <p class="mt-[18px] text-[15px] font-normal text-white ">A restaurant that offers a delicious dining experience and a cozy atmosphere. All dishes are cooked with fresh ingredients and special flavors that make you want to come back again and again. A great place to meet friends and family</p>
+        <div class="mt-[18px] flex gap-4">
+           </div>
+      </div>
+      <div class="md:w-[316px]">
+        <div class="mt-[23px] flex">
+          <div class="flex h-[38px] w-[38px] items-center justify-center rounded-[75%]">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M20.8472 14.8554L16.4306 12.8764L16.4184 12.8707C16.1892 12.7727 15.939 12.7333 15.6907 12.7562C15.4424 12.7792 15.2037 12.8636 14.9963 13.002C14.9718 13.0181 14.9484 13.0357 14.9259 13.0545L12.6441 14.9998C11.1984 14.2976 9.70595 12.8164 9.00376 11.3895L10.9519 9.07294C10.9706 9.0495 10.9884 9.02606 11.0053 9.00075C11.1407 8.79384 11.2229 8.55667 11.2445 8.31035C11.2661 8.06402 11.2264 7.81618 11.1291 7.58887V7.57762L9.14438 3.15356C9.0157 2.85662 8.79444 2.60926 8.51362 2.44841C8.2328 2.28756 7.9075 2.22184 7.58626 2.26106C6.31592 2.42822 5.14986 3.05209 4.30588 4.01615C3.4619 4.98021 2.99771 6.21852 3.00001 7.49981C3.00001 14.9436 9.05626 20.9998 16.5 20.9998C17.7813 21.0021 19.0196 20.5379 19.9837 19.6939C20.9477 18.85 21.5716 17.6839 21.7388 16.4136C21.7781 16.0924 21.7125 15.7672 21.5518 15.4864C21.3911 15.2056 21.144 14.9843 20.8472 14.8554ZM16.5 19.4998C13.3185 19.4963 10.2682 18.2309 8.01856 15.9813C5.76888 13.7316 4.50348 10.6813 4.50001 7.49981C4.49648 6.58433 4.82631 5.69887 5.42789 5.00879C6.02947 4.3187 6.86167 3.87118 7.76907 3.74981C7.7687 3.75355 7.7687 3.75732 7.76907 3.76106L9.73782 8.16731L7.80001 10.4867C7.78034 10.5093 7.76247 10.5335 7.74657 10.5589C7.60549 10.7754 7.52273 11.0246 7.5063 11.2825C7.48988 11.5404 7.54035 11.7981 7.65282 12.0307C8.5022 13.7679 10.2525 15.5051 12.0084 16.3536C12.2428 16.465 12.502 16.5137 12.7608 16.495C13.0196 16.4762 13.2692 16.3907 13.485 16.2467C13.5091 16.2305 13.5322 16.2129 13.5544 16.1942L15.8334 14.2498L20.2397 16.2232C20.2397 16.2232 20.2472 16.2232 20.25 16.2232C20.1301 17.1319 19.6833 17.9658 18.9931 18.5689C18.3028 19.172 17.4166 19.5029 16.5 19.4998Z"
+                fill="white"></path>
+            </svg>
+          </div>
+
+          
+          <div class="ml-[18px]">
+            <a href="tel:+911800123444" class="font-Inter text-[14px] font-medium text-white">+885: 070 965 815</a>
+            <p class="font-Inter text-[12px] font-medium text-white">Support Number</p>
+          </div>
+        </div>
+        <div class="mt-[23px] flex">
+          <div class="flex h-[38px] w-[38px] items-center justify-center rounded-[75%]">
+            <svg width="20" height="15" viewBox="0 0 20 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M19 0H1C0.801088 0 0.610322 0.0790178 0.46967 0.21967C0.329018 0.360322 0.25 0.551088 0.25 0.75V13.5C0.25 13.8978 0.408035 14.2794 0.68934 14.5607C0.970644 14.842 1.35218 15 1.75 15H18.25C18.6478 15 19.0294 14.842 19.3107 14.5607C19.592 14.2794 19.75 13.8978 19.75 13.5V0.75C19.75 0.551088 19.671 0.360322 19.5303 0.21967C19.3897 0.0790178 19.1989 0 19 0ZM10 7.98281L2.92844 1.5H17.0716L10 7.98281ZM7.25406 7.5L1.75 12.5447V2.45531L7.25406 7.5ZM8.36406 8.51719L9.48906 9.55312C9.62743 9.68014 9.80842 9.75062 9.99625 9.75062C10.1841 9.75062 10.3651 9.68014 10.5034 9.55312L11.6284 8.51719L17.0659 13.5H2.92844L8.36406 8.51719ZM12.7459 7.5L18.25 2.45438V12.5456L12.7459 7.5Z"
+                fill="white"></path>
+            </svg>
+          </div>
+          <div class="ml-[18px]">
+            <a href="mailto:help@lorem.com" class="font-Inter text-[14px] font-medium text-[#fff]">help@lorem.com</a>
+            <p class="font-Inter text-[12px] font-medium text-[#fff]">Support Email</p>
+          </div>
+        </div>
+        <div class="mt-[23px] flex">
+          <div class="flex h-[38px] w-[38px] items-center justify-center rounded-[75%]">
+            <svg width="18" height="21" viewBox="0 0 18 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M9 4.5C8.25832 4.5 7.5333 4.71993 6.91661 5.13199C6.29993 5.54404 5.81928 6.12971 5.53545 6.81494C5.25162 7.50016 5.17736 8.25416 5.32205 8.98159C5.46675 9.70902 5.8239 10.3772 6.34835 10.9017C6.8728 11.4261 7.54098 11.7833 8.26841 11.9279C8.99584 12.0726 9.74984 11.9984 10.4351 11.7145C11.1203 11.4307 11.706 10.9501 12.118 10.3334C12.5301 9.7167 12.75 8.99168 12.75 8.25C12.75 7.25544 12.3549 6.30161 11.6517 5.59835C10.9484 4.89509 9.99456 4.5 9 4.5ZM9 10.5C8.55499 10.5 8.11998 10.368 7.74997 10.1208C7.37996 9.87357 7.09157 9.52217 6.92127 9.11104C6.75097 8.6999 6.70642 8.2475 6.79323 7.81105C6.88005 7.37459 7.09434 6.97368 7.40901 6.65901C7.72368 6.34434 8.12459 6.13005 8.56105 6.04323C8.9975 5.95642 9.4499 6.00097 9.86104 6.17127C10.2722 6.34157 10.6236 6.62996 10.8708 6.99997C11.118 7.36998 11.25 7.80499 11.25 8.25C11.25 8.84674 11.0129 9.41903 10.591 9.84099C10.169 10.2629 9.59674 10.5 9 10.5ZM9 0C6.81273 0.00248131 4.71575 0.872472 3.16911 2.41911C1.62247 3.96575 0.752481 6.06273 0.75 8.25C0.75 11.1938 2.11031 14.3138 4.6875 17.2734C5.84552 18.6108 7.14886 19.8151 8.57344 20.8641C8.69954 20.9524 8.84978 20.9998 9.00375 20.9998C9.15772 20.9998 9.30796 20.9524 9.43406 20.8641C10.856 19.8147 12.1568 18.6104 13.3125 17.2734C15.8859 14.3138 17.25 11.1938 17.25 8.25C17.2475 6.06273 16.3775 3.96575 14.8309 2.41911C13.2843 0.872472 11.1873 0.00248131 9 0ZM9 19.3125C7.45031 18.0938 2.25 13.6172 2.25 8.25C2.25 6.45979 2.96116 4.7429 4.22703 3.47703C5.4929 2.21116 7.20979 1.5 9 1.5C10.7902 1.5 12.5071 2.21116 13.773 3.47703C15.0388 4.7429 15.75 6.45979 15.75 8.25C15.75 13.6153 10.5497 18.0938 9 19.3125Z"
+                fill="white"></path>
+            </svg>
+          </div>
+          
+          <div class="ml-[18px]">
+            <a href="mailto:help@lorem.com" class="font-Inter text-[14px] font-medium text-[#fff]">Toul Kork</a>
+            <p class="font-Inter text-[12px] font-medium text-white">Address</p>
+          </div>
+        </div>
+      </div>
+      <div class="mt-6 flex w-full flex-col justify-between text-white sm:flex-row md:mt-0 md:max-w-[341px]">
+        <div class="">
+          <p class="text-deutziawhite font-inter text-[18px] font-medium leading-normal">Pages</p>
+          <ul>
+            <li class="mt-[15px]"><a
+                class="text-deutziawhite hover:text-deutziawhite/80 font-inter text-[15px] font-normal hover:font-semibold"
+                href="/">Home</a></li>
+            <li class="mt-[15px]"><a
+                class="text-deutziawhite hover:text-deutziawhite/80 font-inter text-[15px] font-normal hover:font-semibold"
+                href="/our-tutors">Login</a></li>
+            <li class="mt-[15px]"><a
+                class="text-deutziawhite hover:text-deutziawhite/80 font-inter text-[15px] font-normal hover:font-semibold"
+                href="/become-a-tutor">Menu</a></li>
+            <li class="mt-[15px]"><a
+                class="text-deutziawhite hover:text-deutziawhite/80 font-inter text-[15px] font-normal hover:font-semibold"
+                href="/plans-and-pricing">About</a></li>
+           
+          </ul>
+        </div>
+        <div class="mt-6 flex flex-col gap-4 sm:mt-0">
+          <p class="text-deutziawhite font-inter text-[18px] font-medium">Download the app</p>
+          <div class="flex gap-4 sm:flex-col">
+            <a target="_blank"
+              href="#"><img alt="facebook icon" loading="lazy" width="30" height="50" decoding="async" data-nimg="1" style="color:transparent" src="../images/facebook.avif  "/>FaceBook</a><a
+              target="_blank"
+              href="#"><img alt="facebook icon" loading="lazy" width="30" height="50" decoding="async" data-nimg="1" style="color:transparent" src="../images/instagram.avif" />Instagram</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr class="mt-[30px] text-white" />
+    <div class="flex items-center justify-center pb-8 pt-[9px] md:py-8">
+      <p class="text-[10px] font-normal text-white md:text-[12px]">
+        © Copyright
+        <!-- -->2024
+        <!-- -->, All Rights Reserved by YOUR WEBSITES. PVT. LTD
+      </p>
+    </div>
+  </div>
+</div>
+  </footer>
+  <script>
+    // Theme
+    const toggle = document.getElementById('themeToggle');
+    const icon = document.getElementById('themeIcon');
+    const html = document.documentElement;
+    if (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      html.classList.add('dark'); icon.textContent = '☀️';
+    }
+    toggle.addEventListener('click', () => {
+      html.classList.toggle('dark');
+      const isDark = html.classList.contains('dark');
+      icon.textContent = isDark ? '☀️' : '🌙';
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
+
+    // Filter
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const cat = btn.dataset.cat;
+        document.querySelectorAll('#menuGrid > *').forEach(card => {
+          card.style.display = (cat === 'all' || card.dataset.cat === cat) ? '' : 'none';
+        });
+      });
+    });
+  </script>
+</body>
+</html>

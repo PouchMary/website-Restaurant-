@@ -6,212 +6,23 @@
     <title>Document</title>
     <link rel="stylesheet" href="../src/output.css">
 </head>
-<body class="bg-green-50">
-    <!-- Navigation -->
-    <nav class="bg-green-800 text-white p-4 shadow-lg">
-        <div class="container mx-auto flex justify-between items-center">
-            <div class="flex items-center space-x-2">
-                <i class="fas fa-paw text-2xl"></i>
-                <span class="text-xl font-bold">AnimalVenture</span>
-            </div>
-            <div class="hidden md:flex space-x-6">
-                <a href="#" class="hover:text-green-200">Home</a>
-                <a href="#animals" class="hover:text-green-200">Animals</a>
-                <a href="#earn" class="hover:text-green-200">Earn</a>
-                <a href="#about" class="hover:text-green-200">About</a>
-            </div>
-            <div class="flex items-center space-x-4">
-                <div class="bg-green-700 px-3 py-1 rounded-full">
-                    <i class="fas fa-coins mr-1"></i>
-                    <span id="coins">250</span>
-                </div>
-                <button class="md:hidden" id="menu-btn">
-                    <i class="fas fa-bars text-xl"></i>
-                </button>
-            </div>
-        </div>
-        <!-- Mobile Menu -->
-        <div class="md:hidden hidden" id="mobile-menu">
-            <div class="px-2 pt-2 pb-3 space-y-1">
-                <a href="#" class="block px-3 py-2 hover:bg-green-700">Home</a>
-                <a href="#animals" class="block px-3 py-2 hover:bg-green-700">Animals</a>
-                <a href="#earn" class="block px-3 py-2 hover:bg-green-700">Earn</a>
-                <a href="#about" class="block px-3 py-2 hover:bg-green-700">About</a>
-            </div>
-        </div>
+<body>
+      <!-- NAV -->
+  <nav class="fixed top-0 left-0 right-0 z-50 nav-blur bg-orange-400/80 dark:bg-oak-900/80 border-b border-oak-100 dark:border-oak-700">
+    <nav class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="index.html" class="font-display text-xl font-bold text-ember-700 dark:text-ember-300">Ember <span class="text-oak-500">&</span> Oak</a>
+      <div class="hidden md:flex items-center gap-8 text-lg font-medium">
+        <a href="./home1.html" class="hover:text-ember-500 transition-colors">Home</a>
+        <a href="./menu.html" class="text-ember-500 border-b border-ember-400 pb-0.5">Menu</a>
+        <a href="./about.html" class="hover:text-ember-500 transition-colors">About</a>
+        <a href="./login.html" class="hover:text-ember-500 transition-colors">Contact</a>
+        <a href="."class="hover:text-ember-500 transition-colors">Login</a>
+        <!-- <a href="auth.html" class="hover:text-ember-500 transition-colors"><button><link rel="stylesheet" href="./login.html">Login</button></a> -->
+      </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="bg-gradient-to-r from-green-600 to-green-800 text-white py-16">
-        <div class="container mx-auto px-4 text-center">
-            <h1 class="text-4xl md:text-5xl font-bold mb-4">Wellcome to restaurant food </h1>
-            <p class="text-xl mb-8 max-w-2xl mx-auto">Welcome to [Restaurant Name], where every meal feels like coming home. We believe in serving delicious food made with love, fresh ingredients, and a touch of creativity. Whether you’re here for a quick bite, a family dinner, or a special celebration, we’re dedicated to making every visit memorable.!</p>
-            <button class="bg-yellow-500 hover:bg-yellow-600 text-green-900 font-bold py-3 px-8 rounded-full text-lg transition duration-300">
-                Get Started <i class="fas fa-arrow-right ml-2"></i>
-            </button>
-        </div>
-    </section>
-
-    <!-- Animals Section -->
-    <section id="animals" class="py-12 bg-white">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-12 text-green-800">Khmer food delicous</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Animal Card 1 -->
-                <div class="bg-green-100 rounded-xl overflow-hidden shadow-lg transition transform hover:scale-105">
-                    <img src="../images/images (10).jpg" alt="Lion" class="w-full h-64 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2 text-green-800">អា​ម៉ុកត្រី</h3>
-                        <p class="text-gray-600 mb-4">អា​​
-                        </p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-green-700 font-medium"><i class="fas fa-coins mr-1"></i> 10 coins/day</span>
-                            <button class="bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded-full">
-                                Visit Now
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Animal Card 2 -->
-                <div class="bg-green-100 rounded-xl overflow-hidden shadow-lg transition transform hover:scale-105">
-                    <img src="../images/images (2).jpg" alt="Panda" class="w-full h-64 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2 text-green-800">Pandy the Panda</h3>
-                        <p class="text-gray-600 mb-4">Feed Pandy bamboo to earn 15 coins. Watch videos to unlock special treats!</p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-green-700 font-medium"><i class="fas fa-coins mr-1"></i> 15 coins/day</span>
-                            <button class="bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded-full">
-                                Visit Now
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Animal Card 3 -->
-                <div class="bg-green-100 rounded-xl overflow-hidden shadow-lg transition transform hover:scale-105">
-                    <img src="../images/images (1).jpg" alt="Dolphin" class="w-full h-64 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2 text-green-800">Dolly the Dolphin</h3>
-                        <p class="text-gray-600 mb-4">Play with Dolly in her pool to earn 20 coins. Complete quizzes for extra!</p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-green-700 font-medium"><i class="fas fa-coins mr-1"></i> 20 coins/day</span>
-                            <button class="bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded-full">
-                                Visit Now
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- How It Works Section
-    <section id="earn" class="py-16 bg-green-50">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-12 text-green-800">How You Earn</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            
-                <div class="bg-white p-6 rounded-xl shadow-md text-center">
-                    <div class="bg-green-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4">
-                        <i class="fas fa-search text-green-700 text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2 text-green-800">1. Visit Animals</h3>
-                    <p class="text-gray-600">Browse our collection of virtual animals and select one to visit.</p>
-                </div>
-
-                
-                <div class="bg-white p-6 rounded-xl shadow-md text-center">
-                    <div class="bg-green-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4">
-                        <i class="fas fa-tasks text-green-700 text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2 text-green-800">2. Complete Activities</h3>
-                    <p class="text-gray-600">Feed, play with, or learn about the animals to earn coins.</p>
-                </div>
-
-               
-                <div class="bg-white p-6 rounded-xl shadow-md text-center">
-                    <div class="bg-green-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4">
-                        <i class="fas fa-gift text-green-700 text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2 text-green-800">3. Redeem Rewards</h3>
-                    <p class="text-gray-600">Exchange your coins for gift cards, donations, or other rewards.</p>
-                </div>
-            </div>
-
-          
-            <div class="mt-16 bg-white rounded-xl shadow-lg overflow-hidden">
-                <div class="md:flex">
-                    <div class="md:w-1/2 p-8 md:p-12">
-                        <h3 class="text-2xl font-bold mb-4 text-green-800">Available Rewards</h3>
-                        <ul class="space-y-3">
-                            <li class="flex items-start">
-                                <i class="fas fa-check-circle text-green-600 mt-1 mr-2"></i>
-                                <span>$5 Amazon Gift Card - 1000 coins</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check-circle text-green-600 mt-1 mr-2"></i>
-                                <span>$10 PayPal Cash - 2000 coins</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check-circle text-green-600 mt-1 mr-2"></i>
-                                <span>Animal Charity Donation - 500 coins</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check-circle text-green-600 mt-1 mr-2"></i>
-                                <span>Exclusive Animal Badges - 300 coins</span>
-                            </li>
-                        </ul>
-                        <button class="mt-6 bg-yellow-500 hover:bg-yellow-600 text-green-900 font-bold py-2 px-6 rounded-full">
-                            View All Rewards
-                        </button>
-                    </div>
-                    <div class="md:w-1/2 bg-green-100 flex items-center justify-center p-8">
-                        <video src="../vedio/Professional chef preparing meal, flambing indoors in restaurant kitchen. Stock Video - Adobe Stock.mp4"></video>
-                        <img src=".." alt="Rewards" class="rounded-lg shadow-md max-h-64">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> -->
-
-    <!-- About Section -->
-    <section id="about" class="py-16 bg-white">
-        <div class="container mx-auto px-4">
-            <div class="md:flex items-center">
-                <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
-                    <img src="https://source.unsplash.com/random/600x400/?wildlife,conservation" alt="About Us" class="rounded-lg shadow-lg w-full">
-                </div>
-                <div class="md:w-1/2">
-                    <h2 class="text-3xl font-bold mb-6 text-green-800">About AnimalVenture</h2>
-                    <p class="text-gray-600 mb-4">
-                        AnimalVenture was created to combine a love for animals with opportunities to earn rewards. 
-                        Our platform supports real-world animal conservation efforts by donating a portion of all revenue.
-                    </p>
-                    <p class="text-gray-600 mb-6">
-                        Since 2022, we've helped users earn over $50,000 in rewards while contributing $10,000 to animal charities worldwide.
-                    </p>
-                    <div class="flex space-x-4">
-                        <button class="bg-green-700 hover:bg-green-800 text-white py-2 px-6 rounded-full">
-                            Our Mission
-                        </button>
-                        <button class="border-2 border-green-700 text-green-700 hover:bg-green-50 py-2 px-6 rounded-full">
-                            Charity Partners
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
- 
-
-
-
-
-    
-                <!-- ABOUT Section -->
-            <div class="w-full lg:h-screen h-full m-auto flex items-center justify-cetner py-20 bg-gray-50 dark:bg-gray-900">
+     <!-- ABOUT Section -->
+            <div class="w-full lg:h-screen h-full m-auto flex items-center justify-cetner py-20 bg-white dark:bg-gray-900">
                 <div class="w-full h-full flex flex-col justify-center items-center sm:px-4 px-2">
                     <!--  -->
                     <div class="lg:w-[90%] w-full mx-auto flex flex-col lg:gap-6 lg:flex-row items-center justify-center ">
@@ -226,40 +37,29 @@
 
                             <!-- Main Img -->
                             <img
-                        class="rounded-full relative object-cover right-0 lg:w-[30rem] lg:h-[30rem] sm:w-[25rem] sm:h-[25rem] w-[12rem] h-[12rem] outline sm:outline-offset-[.77em] outline-offset-[.37em] outline-green-500"
+                        class="rounded-full relative object-cover right-0 lg:w-[30rem] lg:h-[30rem] sm:w-[25rem] sm:h-[25rem] w-[12rem] h-[12rem] outline sm:outline-offset-[.77em] outline-offset-[.37em] outline-orange-700"
                         src="../images/cambodian-fish-amok_508526-98.avif" alt="About us" />
                         </div>
                         <!--  -->
                         <div
-                            class="lg:w-[60%] p-4 w-full h-full shadow-xl shadow-green-300/40 flex flex-col justify-center items-center sm:px-6 px-4 rounded-xl">
-                            <h2 class="text-4xl text-center text-green-600 dark:text-green-400 font-bold px-4 py-1 md:mt-0 mt-10">
+                            class="lg:w-[60%] p-4 w-full h-full shadow-xl shadow-orange-300/40 flex flex-col justify-center items-center sm:px-6 px-4 rounded-xl">
+                            <h2 class="text-4xl text-center text-orange-600 dark:text-orange-400 font-bold px-4 py-1 md:mt-0 mt-10">
                                 About Us
                             </h2>
-                            <p class="md:text-3xl text-2xl text-center text-gray-800 dark:text-gray-200 font-bold my-5">We are
+                            <!-- <p class="md:text-3xl text-2xl text-center text-gray-800 dark:text-gray-200 font-bold my-5">We are
                                 Petal Haven S.C.
-                            </p>
+                            </p> -->
                             <p class="md:text-xl sm:text-lg text-base mt-2 text-justify sm:px-2 dark:text-gray-300">At our restaurant, we believe that great food brings people together. Every dish we serve is carefully prepared using fresh ingredients, rich flavors, and a touch of creativity. From traditional favorites to modern specialties, we create meals that satisfy both the heart and the palate. Whether you’re here for a casual lunch or a special celebration, we are dedicated to making every moment memorable.
                                 Amok is one of the most iconic dishes of Cambodia, representing the rich culture and culinary heritage of the nation. Made with fresh fish, coconut milk, and a blend of traditional Khmer spices such as lemongrass and kaffir lime, this dish is carefully steamed in banana leaves to create its unique flavor and aroma. More than just a meal, Amok reflects the identity and tradition of Cambodian cuisine, offering a taste that is both authentic and unforgettable.
                             </p>
 
                             <!-- button -->
-                            <button class="lg:mt-10 mt-6 lg:px-6 px-4 lg:py-4 py-2 bg-green-600 rounded-sm lg:text-xl text-lg text-white font-semibold">Read More</button>
+                            <button class="lg:mt-10 mt-6 lg:px-6 px-4 lg:py-4 py-2 bg-orange-600 rounded-sm lg:text-xl text-lg text-white font-semibold">Read More</button>
 
                         </div>
 
                     </div>
                 </div>
             </div>
-
-
-
-
-
-
-
-
-            
-
-            
 </body>
 </html>

@@ -1,56 +1,525 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./src/output.css">
-    <link rel="stylesheet" href="./hi.config">
+    <link rel="stylesheet" href="../src/output.css">
+
+ <script src="https://cdn.tailwindcss.com"></script>
+
+ 
+ <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: { extend: {
+        fontFamily: { display: ['Playfair Display','serif'], body: ['Jost','sans-serif'] },
+        colors: {
+          ember: { 50:'#fff8f0',100:'#ffecd6',300:'#f5a455',500:'#e07520',700:'#a04f0c',900:'#5c2a04' },
+          oak:   { 50:'#f5f3ef',100:'#e8e3d8',300:'#c2b89a',500:'#8a7660',700:'#5a4e3a',900:'#2c2418' }
+        }
+      }}
+    }
+  </script>
+  <style>
+    body { font-family: 'Jost', sans-serif; }
+    h1,h2,h3,.font-display { font-family: 'Playfair Display', serif; }
+    .nav-blur { backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); }
+    .menu-hero {
+      background-image: linear-gradient(135deg, rgba(30,18,6,0.92) 0%, rgba(80,45,10,0.7) 100%),
+        url('https://images.unsplash.com/photo-1481931098730-318b6f776db0?w=1400&q=80');
+      background-size: cover; background-position: center;
+    }
+    .card-hover { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .card-hover:hover { transform: translateY(-4px); box-shadow: 0 16px 32px rgba(0,0,0,0.12); }
+    .filter-btn { transition: all 0.2s; }
+    .filter-btn.active { background: #e07520; color: white; border-color: #e07520; }
+    .divider { width: 60px; height: 2px; background: linear-gradient(90deg,#e07520,#f5a455); margin: 1rem auto; }
+  </style>
+    
+   <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            overflow-x: hidden;
+        }
+
+        .hours-container {
+            width: 100%;
+            max-width: 900px;
+            margin: 80px auto;
+            padding: 20px;
+            text-align: center;
+            font-family: "Google Sans", sans-serif;
+            color: #333;
+        }
+
+        .hours-container h2 {
+            font-size: 2.5rem;
+            font-weight: 300;
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        .hours-description {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        .hours-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .hours-table th {
+            padding: 20px;
+            font-size: 1rem;
+            font-weight: 600;
+            border-bottom: 1px solid #eee;
+        }
+
+        .hours-table td {
+            padding: 15px;
+            border-bottom: 1px solid #f0f0f0;
+            font-size: 1rem;
+            color: #444;
+        }
+
+        .day-column {
+            text-align: left;
+            font-weight: bold;
+            width: 25%;
+        }
+
+        .hours-table tr:hover {
+            background-color: #fafafa;
+        }
+
+        @media (max-width: 600px) {
+            .hours-table th, .hours-table td {
+                padding: 10px 5px;
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+
 </head>
-<body>
-    
-    <div style="background:linear-gradient(rgba(229, 233, 233, 0.5), rgba(150, 165, 171, 0.5)), url(./images/Khmer_food.jpg) no-repeat center;background-size:cover"
-    class="py-52 px-1 md:px-8 text-center relative text-blue-50 font-bold text-2xl md:text-3xl overflow-auto">
-    <h1 class="pb-4">Search for product</h1>
-    
-    <div class="w-11/12 md:w-3/4 lg:max-w-3xl m-auto">
-        <div class="relative z-30 text-base text-black"><input type="text" value="" placeholder="Keyword" class="mt-2 shadow-md focus:outline-none rounded-2xl py-3 px-6 block w-full bg-white">
-            <div
-                class="text-left absolute top-10 rounded-t-none rounded-b-2xl shadow bg-white divide-y w-full max-h-40 overflow-auto">
+
+<body class="min-h-screen bg-white dark:bg-black text-black dark:text-white transition-colors duration-300">
+
+  <nav class="fixed top-0 left-0 right-0 z-50 nav-blur bg-orange-500 dark:bg-oak-900/80 border-b border-oak-100 dark:border-oak-3000 ">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="index.html" class="font-display text-xl font-bold text-ember-700 dark:text-ember-300">Ember <span class="text-oak-500">&</span> Oak</a>
+      <div class="hidden md:flex items-center gap-8 text-lg font-medium">
+        <a href="../index.html" class="hover:text-ember-500 transition-colors">Home</a>
+        <a href="./menu.html" class="text-ember-500 border-b border-ember-400 pb-0.5">Menu</a>
+        <a href="./about1.html" class="hover:text-ember-500 transition-colors">About</a>
+        <a href="./login.html" class="hover:text-ember-500 transition-colors">Contact</a>
+        <a href="./login.html"class="hover:text-ember-500 transition-colors">Login</a>
+        <!-- <a href="auth.html" class="hover:text-ember-500 transition-colors"><button><link rel="stylesheet" href="./login.html">Login</button></a> -->
+  
+      </div>
+      <button id="themeToggle" class="w-9 h-9 rounded-full bg-oak-100 dark:bg-oak-700 flex items-center justify-center hover:bg-oak-200 dark:hover:bg-oak-600 transition-colors">
+        <span id="themeIcon">🌙</span>
+      </button>
+    </div>
+  </nav>
+
+
+    <section  class="bg-white dark:bg-black text-black dark:text-white">
+        <div class="container mx-auto px-8 text-center​​ mt-16 ">
+            <h1 class="text-4xl mb-8 max-w-2xl mx-auto text-4xl md:text-5xl font-bold mb-4 mx-auto ">Wellcome to restaurant food </h1>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">Welcome to [Restaurant Name], where every meal feels like coming home. We believe in serving delicious food made with love, fresh ingredients, and a touch of creativity. Whether you’re here for a quick bite, a family dinner, or a special celebration, we’re dedicated to making every visit memorable.!</p>
+            <button class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-full text-lg transition duration-300">
+                Get Started <i class="fas fa-arrow-right ml-2"></i>
+            </button>
+        </div>
+    </section>
+
+    <!-- Animals Section -->
+    <section id="animals" class="bg-white px-6 py-15">
+        <div class="container mx-auto px-4 mt-16">
+            <h2 class="text-3xl font-bold text-center mb-12 text-black">Khmer food delicous</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Animal Card 1 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg transition transform hover:scale-105">
+                    <img src="../images/images (30).jpg" alt="Lion" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-orange-500">អា​ម៉ុកត្រី</h3>
+                        <p class="text-black mb-4">អា​​
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-black font-medium"><i class="fas fa-coins mr-1"></i> 10 coins/day</span>
+                            <button class="bg-orange-500 hover:bg-orange-700 text-white py-2 px-4 rounded-full">
+                                Visit Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg transition transform hover:scale-105">
+                    <img src="../images/images (32).jpg" alt="Panda" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-black">Pandy the Panda</h3>
+                        <p class="text-gray-600 mb-4">Feed Pandy bamboo to earn 15 coins. Watch videos to unlock special treats!</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-black font-medium"><i class="fas fa-coins mr-1"></i> 15 coins/day</span>
+                            <button class="bg-orange-500 hover:bg-orange-700 text-white py-2 px-4 rounded-full">
+                                Visit Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg transition transform hover:scale-105">
+                    <img src="../images/images (35).jpg" alt="Dolphin" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-black">Dolly the Dolphin</h3>
+                        <p class="text-gray-600 mb-4">Play with Dolly in her pool to earn 20 coins. Complete quizzes for extra!</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-black font-medium"><i class="fas fa-coins mr-1"></i> 20 coins/day</span>
+                            <button class="bg-orange-500 hover:bg-orange-700 text-white py-2 px-4 rounded-full">
+                                Order Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+           <header class="flex mx-auto justify-between items-center max-w-[1300px] py-4 ">
+    </header>
+    <section
+        class="relative  flex flex-col-reverse md:flex-row mx-auto justify-between items-center gap-9 md:gap-4 max-w-[1300px] py-4  my-12">
+        <div class="md:w-[520px] z-20">
+            <h1 class="text-3xl md:text-[36px] lg:text-[46px] leading-[56px] text-black font-bold mt-20">
+                <span class="text-black">Delicious moments start here.</h1>
+            <p class="text-base text-black mt-4 md:mt-9 mb-10 md:mb-16">
+We offer a variety of Khmer and international dishes, prepared with fresh ingredients, rich flavors, and excellent service. Moreover, we strive to create a memorable dining experience that you will never forget. Come and enjoy delicious food and wonderful moments with your family and friends.</p> 
+        </div>  
+        	<div class="grid lg:grid-cols-2 gap-3 w-[-250px] rounded-lg show-lg overf ">
+	  <div class="grid grid-cols-2 lg:grid-cols-1 gap-3">
+		<figure class="relative w-full h-60">
+		  <img class="w-full h-full absolute top-0 start-0 object-cover rounded-xl" src="https://images.unsplash.com/photo-1670272505340-d906d8d77d03?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80" alt="Image Description">
+		</figure>
+		<figure class="relative w-full h-60">
+		  <img class="w-full h-full absolute top-0 start-0 object-cover rounded-xl" src="https://images.unsplash.com/photo-1671726203638-83742a2721a1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80" alt="Image Description">
+		</figure>
+	  </div>
+	  <figure class="relative w-full h-72 sm:h-96 lg:h-full">
+		<img class="w-full h-full absolute top-0 start-0 object-cover rounded-xl" src="https://images.unsplash.com/photo-1671726203394-491c8b574a0a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=988&q=80" alt="Image Description">
+	  </figure>
+	</div>
+  	<div class="grid lg:grid-cols-2 gap-3">
+	  <div class="grid grid-cols-2 lg:grid-cols-1 gap-3">
+		<figure class="relative w-full h-60">
+		  <img class="w-full h-full absolute top-0 start-0 object-cover rounded-xl" src="https://images.unsplash.com/photo-1670272505340-d906d8d77d03?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80" alt="Image Description">
+		</figure>
+		<figure class="relative w-full h-60">
+		  <img class="w-full h-full absolute top-0 start-0 object-cover rounded-xl" src="https://images.unsplash.com/photo-1671726203638-83742a2721a1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80" alt="Image Description">
+		</figure>
+	  </div>
+	  <figure class="relative w-full h-72 sm:h-96 lg:h-full">
+		<img class="w-full h-full absolute top-0 start-0 object-cover rounded-xl" src="https://images.unsplash.com/photo-1671726203394-491c8b574a0a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=988&q=80" alt="Image Description">
+	  </figure>
+	</div>
+
+  	<div class="grid lg:grid-cols-2 gap-3 w-[-250px] rounded-lg show-lg overf  h-full w-full">
+	  <div class="grid grid-cols-2 lg:grid-cols-1 gap-3">
+		<figure class="relative w-full h-60">
+		  <img class="w-full h-full absolute top-0 start-0 object-cover rounded-xl" src="https://images.unsplash.com/photo-1670272505340-d906d8d77d03?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80" alt="Image Description">
+		</figure>
+		<figure class="relative w-full h-60">
+		  <img class="w-full h-full absolute top-0 start-0 object-cover rounded-xl" src="https://images.unsplash.com/photo-1671726203638-83742a2721a1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80" alt="Image Description">
+		</figure>
+	  </div>
+	  <figure class="relative w-full h-72 sm:h-96 lg:h-full">
+		<img class="w-full h-full absolute top-0 start-0 object-cover rounded-xl" src="https://images.unsplash.com/photo-1671726203394-491c8b574a0a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=988&q=80" alt="Image Description">
+	  </figure>
+	</div>
+
+<br><br><br><br><br><br>
+
+
+
+
+
+
+
+
+
+
+    </section>
+     <section class="bg-white  px-6 py-15 ">
+        
+<div class="sm:flex sm:flex-col sm:align-center p-10">
+    <div class="relative self-center bg-slate-200 rounded-lg p-0.5 flex">
+        <button type="button"
+            class="relative w-1/2 rounded-md py-2 text-sm font-medium whitespace-nowrap focus:outline-none sm:w-auto sm:px-8 bg-slate-50 border-slate-50 text-slate-900 shadow-sm">Monthly
+            billing
+        </button>
+        <button type="button"
+            class="ml-0.5 relative w-1/2 border rounded-md py-2 text-sm font-medium whitespace-nowrap focus:outline-none sm:w-auto sm:px-8 border-transparent text-slate-900">Yearly
+            billing
+        </button>
+    </div>
+    <div
+        class="mt-12 space-y-3 sm:mt-16 sm:space-y-0 sm:grid sm:grid-cols-3 sm:gap-6 md:max-w-5xl md:mx-auto xl:grid-cols-3">
+        <div class="border border-slate-200 rounded-lg shadow-sm divide-y divide-slate-200">
+            <div class="p-6">
+                <h2 class="text-xl leading-6 font-bold text-slate-900">Starter</h2>
+                <p class="mt-2 text-base text-slate-700 leading-tight">For new makers who want to fine-tune and test an
+                    idea.</p>
+                <p class="mt-8">
+                    <span class="text-4xl font-bold text-slate-900 tracking-tighter">$0</span>
+
+                    <span class="text-base font-medium text-slate-500">/mo</span>
+                </p><a href="/sign-up"
+                    class="mt-8 block w-full bg-slate-900 rounded-md py-2 text-sm font-semibold text-white text-center">Join
+                    as a Starter</a>
+            </div>
+            <div class="pt-6 pb-8 px-6">
+                <h3 class="text-sm font-bold text-slate-900 tracking-wide uppercase">What's included</h3>
+                <ul role="list" class="mt-4 space-y-3">
+                    <li class="flex space-x-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0 h-5 w-5 text-green-400" width="24"
+                            height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <path d="M5 12l5 5l10 -10"></path>
+                        </svg>
+                        <span class="text-base text-slate-700">1 landing page included</span>
+                    </li>
+                    <li class="flex space-x-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0 h-5 w-5 text-green-400" width="24"
+                            height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <path d="M5 12l5 5l10 -10"></path>
+                        </svg>
+                        <span class="text-base text-slate-700">1,000 visits/mo</span>
+                    </li>
+                    <li class="flex space-x-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0 h-5 w-5 text-green-400" width="24"
+                            height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <path d="M5 12l5 5l10 -10"></path>
+                        </svg>
+                        <span class="text-base text-slate-700">Access to all UI blocks</span>
+                    </li>
+                    <li class="flex space-x-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0 h-5 w-5 text-green-400" width="24"
+                            height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <path d="M5 12l5 5l10 -10"></path>
+                        </svg>
+                        <span class="text-base text-slate-700">50 conversion actions included</span>
+                    </li>
+                    <li class="flex space-x-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0 h-5 w-5 text-green-400" width="24"
+                            height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <path d="M5 12l5 5l10 -10"></path>
+                        </svg>
+                        <span class="text-base text-slate-700">5% payment commission</span>
+                    </li>
+                    <li class="flex space-x-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0 h-5 w-5 text-green-400" width="24"
+                            height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <path d="M5 12l5 5l10 -10"></path>
+                        </svg>
+                        <span class="text-base text-slate-700">Real-time analytics</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="border border-slate-200 rounded-lg shadow-sm divide-y divide-slate-200">
+            <div class="p-6">
+                <h2 class="text-xl leading-6 font-bold text-slate-900">Superior</h2>
+                <p class="mt-2 text-base text-slate-700 leading-tight">For creators with multiple ideas who want to
+                    efficiently test and refine them.</p>
+                <p class="mt-8">
+                    <span class="text-4xl font-bold text-slate-900 tracking-tighter">$8</span>
+
+                    <span class="text-base font-medium text-slate-500">/mo</span>
+                </p><a href="/sign-up"
+                    class="mt-8 block w-full bg-slate-900 rounded-md py-2 text-sm font-semibold text-white text-center">Join
+                    as a Superior</a>
+            </div>
+            <div class="pt-6 pb-8 px-6">
+                <h3 class="text-sm font-bold text-slate-900 tracking-wide uppercase">What's included</h3>
+                <ul role="list" class="mt-4 space-y-3">
+                    <li class="flex space-x-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0 h-5 w-5 text-green-400" width="24"
+                            height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <path d="M5 12l5 5l10 -10"></path>
+                        </svg>
+                        <span class="text-base text-slate-700">All Free features</span>
+                    </li>
+                    <li class="flex space-x-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0 h-5 w-5 text-green-400" width="24"
+                            height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <path d="M5 12l5 5l10 -10"></path>
+                        </svg>
+                        <span class="text-base text-slate-700">5 landing pages included</span>
+                    </li>
+                    <li class="flex space-x-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0 h-5 w-5 text-green-400" width="24"
+                            height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <path d="M5 12l5 5l10 -10"></path>
+                        </svg>
+                        <span class="text-base text-slate-700">50,000 visits/mo</span>
+                    </li>
+                    <li class="flex space-x-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0 h-5 w-5 text-green-400" width="24"
+                            height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <path d="M5 12l5 5l10 -10"></path>
+                        </svg>
+                        <span class="text-base text-slate-700">1,000 conversion actions included</span>
+                    </li>
+                    <li class="flex space-x-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0 h-5 w-5 text-green-400" width="24"
+                            height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <path d="M5 12l5 5l10 -10"></path>
+                        </svg>
+                        <span class="text-base text-slate-700">1% payment commission</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="border border-slate-200 rounded-lg shadow-sm divide-y divide-slate-200">
+            <div class="p-6">
+                <h2 class="text-xl leading-6 font-bold text-slate-900">Shipper</h2>
+                <p class="mt-2 text-base text-slate-700 leading-tight">For productive shippers who want to work more
+                    efficiently.</p>
+                <p class="mt-8">
+                    <span class="text-4xl font-bold text-slate-900 tracking-tighter">$15</span>
+
+                    <span class="text-base font-medium text-slate-500">/mo</span>
+                </p><a href="/sign-up"
+                    class="mt-8 block w-full bg-slate-900 rounded-md py-2 text-sm font-semibold text-white text-center">Join
+                    as a Shipper</a>
+            </div>
+            <div class="pt-6 pb-8 px-6">
+                <h3 class="text-sm font-bold text-slate-900 tracking-wide uppercase">What's included</h3>
+                <ul role="list" class="mt-4 space-y-3">
+                    <li class="flex space-x-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0 h-5 w-5 text-green-400" width="24"
+                            height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <path d="M5 12l5 5l10 -10"></path>
+                        </svg>
+                        <span class="text-base text-slate-700">All Standard features</span>
+                    </li>
+                    <li class="flex space-x-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0 h-5 w-5 text-green-400" width="24"
+                            height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <path d="M5 12l5 5l10 -10"></path>
+                        </svg>
+                        <span class="text-base text-slate-700">20 landing pages included</span>
+                    </li>
+                    <li class="flex space-x-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0 h-5 w-5 text-green-400" width="24"
+                            height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <path d="M5 12l5 5l10 -10"></path>
+                        </svg>
+                        <span class="text-base text-slate-700">200,000 visits/mo</span>
+                    </li>
+                    <li class="flex space-x-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0 h-5 w-5 text-green-400" width="24"
+                            height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <path d="M5 12l5 5l10 -10"></path>
+                        </svg>
+                        <span class="text-base text-slate-700">5,000 conversion actions included</span>
+                    </li>
+                    <li class="flex space-x-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0 h-5 w-5 text-green-400" width="24"
+                            height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <path d="M5 12l5 5l10 -10"></path>
+                        </svg>
+                        <span class="text-base text-slate-700">No payment commission</span>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
 </div>
+  <!-- OPENING HOURS — full width -->
+  <section class="w-full bg-white dark:text-black dark:bg-black  dark:text-white">
+    <div class="hours-container">
+      <h2>Opening Hours</h2>
+      <p class="hours-description">
+        We are open for breakfast, lunch, and dinner. Make a reservation today and come<br>
+        and enjoy some fine dining at our restaurant in Phnom Penh.
+      </p>
+      <table class="hours-table">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Breakfast</th>
+            <th>Lunch</th>
+            <th>Dinner</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="day-column">Monday</td><td>6:30 am – 10:00 am</td><td>11:30 am – 2:30 pm</td><td>6:00 pm – 10:30 pm</td></tr>
+          <tr><td class="day-column">Tuesday</td><td>6:30 am – 10:00 am</td><td>11:30 am – 2:30 pm</td><td>6:00 pm – 10:30 pm</td></tr>
+          <tr><td class="day-column">Wednesday</td><td>6:30 am – 10:00 am</td><td>11:30 am – 2:30 pm</td><td>6:00 pm – 10:30 pm</td></tr>
+          <tr><td class="day-column">Thursday</td><td>6:30 am – 10:00 am</td><td>11:30 am – 2:30 pm</td><td>6:00 pm – 10:30 pm</td></tr>
+          <tr><td class="day-column">Friday</td><td>6:30 am – 10:00 am</td><td>11:30 am – 2:30 pm</td><td>6:00 pm – 10:30 pm</td></tr>
+          <tr><td class="day-column">Saturday</td><td>6:30 am – 10:00 am</td><td>11:30 am – 2:30 pm</td><td>6:00 pm – 10:30 pm</td></tr>
+          <tr><td class="day-column">Sunday</td><td>6:30 am – 10:00 am</td><td>11:30 am – 2:30 pm</td><td>6:00 pm – 10:30 pm</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</section>
 
+<br><br><br><br><br><br><br><br>
 
-
-
-
-//footer
-<div class="mt-8 bg-green-100 pt-9">
+  <footer>
+     <div class="mt-8 bg-orange-500 dark:bg-black pt-9 py-8 px-6 text-center text-sm transition-colors duration-300">
   <div class="mx-auto w-full max-w-[1166px] px-4 xl:px-0">
     <div class="flex flex-col justify-between sm:px-[18px] md:flex-row md:px-10">
       <div class="md:w-[316px]">
         <p class="text-[18px] font-medium text-white">
-        <h1 class="text-white font-extrabold">
+        <h1  class="text-black dark:text-white font-extrabold">
           <span class="text-rose-600">YOUR</span>LOGO
         </h1>
         </p>
-        <p class="mt-[18px] text-[15px] font-normal text-white/[80%]">Lorem ipsum dolor sit amet consectetur adipisicing
-          elit. Eos, fugit non. Incidunt dolorum adipisci, tempore asperiores nemo odio facere officiis enim animi
-          placeat eaque nesciunt alias beatae id, at dicta.</p>
+        <p class="mt-[18px] text-[15px] font-normal text-black/70 dark:text-white/80">A restaurant that offers a delicious dining experience and a cozy atmosphere. All dishes are cooked with fresh ingredients and special flavors that make you want to come back again and again. A great place to meet friends and family</p>
         <div class="mt-[18px] flex gap-4">
-          <a class="hover:scale-110" target="_blank"
-            href="#"><img alt="facebook icon" loading="lazy" width="36" height="36" decoding="async" data-nimg="1" style="color:transparent" src="https://www.englishyaari.com/img/facebook.svg" /></a><a
-            class="hover:scale-110" target="_blank"
-            href="/"><img alt="linkdin icon" loading="lazy" width="36" height="36" decoding="async" data-nimg="1" style="color:transparent" src="https://www.englishyaari.com/img/linkdin.svg" /></a><a
-            class="hover:scale-110" target="_blank"
-            href="/"><img alt="instagram icon" loading="lazy" width="36" height="36" decoding="async" data-nimg="1" style="color:transparent" src="https://www.englishyaari.com/img/instagram1.svg" /></a><a
-            class="hover:scale-110" target="_blank"
-            href=""><img alt="twitter icon" loading="lazy" width="36" height="36" decoding="async" data-nimg="1" style="color:transparent" src="https://www.englishyaari.com/img/twitter.svg" /></a><a
-            class="hover:scale-110" target="_blank"
-            href="https://www.youtube.com/"><img alt="youtube icon" loading="lazy" width="36" height="36" decoding="async" data-nimg="1" style="color:transparent" src="https://www.englishyaari.com/img/youtube.svg" /></a>
-        </div>
+           </div>
       </div>
       <div class="md:w-[316px]">
         <div class="mt-[23px] flex">
@@ -61,8 +530,10 @@
                 fill="white"></path>
             </svg>
           </div>
+
+          
           <div class="ml-[18px]">
-            <a href="tel:+911800123444" class="font-Inter text-[14px] font-medium text-white">+91 1800123444</a>
+            <a href="tel:+911800123444" class="font-Inter text-[14px] font-medium text-black dark:text-white">+885: 070 965 815</a>
             <p class="font-Inter text-[12px] font-medium text-white">Support Number</p>
           </div>
         </div>
@@ -87,9 +558,9 @@
                 fill="white"></path>
             </svg>
           </div>
+          
           <div class="ml-[18px]">
-            <a href="mailto:help@lorem.com" class="font-Inter text-[14px] font-medium text-[#fff]">Sub Nerul, Mumbia,
-              India, 123456</a>
+            <a href="mailto:help@lorem.com" class="font-Inter text-[14px] font-medium text-[#fff]">Toul Kork</a>
             <p class="font-Inter text-[12px] font-medium text-white">Address</p>
           </div>
         </div>
@@ -103,28 +574,23 @@
                 href="/">Home</a></li>
             <li class="mt-[15px]"><a
                 class="text-deutziawhite hover:text-deutziawhite/80 font-inter text-[15px] font-normal hover:font-semibold"
-                href="/our-tutors">News</a></li>
+                href="/our-tutors">Login</a></li>
             <li class="mt-[15px]"><a
                 class="text-deutziawhite hover:text-deutziawhite/80 font-inter text-[15px] font-normal hover:font-semibold"
-                href="/become-a-tutor">Contact</a></li>
+                href="/become-a-tutor">Menu</a></li>
             <li class="mt-[15px]"><a
                 class="text-deutziawhite hover:text-deutziawhite/80 font-inter text-[15px] font-normal hover:font-semibold"
-                href="/plans-and-pricing">Plans and pricing</a></li>
-            <li class="mt-[15px]"><a
-                class="text-deutziawhite hover:text-deutziawhite/80 font-inter text-[15px] font-normal hover:font-semibold"
-                href="/terms-and-conditions">Terms and conditions</a></li>
-            <li class="mt-[15px]"><a
-                class="text-deutziawhite hover:text-deutziawhite/80 font-inter text-[15px] font-normal hover:font-semibold"
-                href="/privacy-policy">Privcay policy</a></li>
+                href="/plans-and-pricing">About</a></li>
+           
           </ul>
         </div>
         <div class="mt-6 flex flex-col gap-4 sm:mt-0">
           <p class="text-deutziawhite font-inter text-[18px] font-medium">Download the app</p>
           <div class="flex gap-4 sm:flex-col">
             <a target="_blank"
-              href="#"><img alt="facebook icon" loading="lazy" width="168" height="50" decoding="async" data-nimg="1" style="color:transparent" src="https://www.englishyaari.com/img/google-store.svg" /></a><a
+              href="#"><img alt="facebook icon" loading="lazy" width="30" height="50" decoding="async" data-nimg="1" style="color:transparent" src="../images/facebook.avif  "/>FaceBook</a><a
               target="_blank"
-              href="#"><img alt="facebook icon" loading="lazy" width="168" height="50" decoding="async" data-nimg="1" style="color:transparent" src="https://www.englishyaari.com/img/apple-store.svg" /></a>
+              href="#"><img alt="facebook icon" loading="lazy" width="30" height="50" decoding="async" data-nimg="1" style="color:transparent" src="../images/instagram.avif" />Instagram</a>
           </div>
         </div>
       </div>
@@ -139,7 +605,35 @@
     </div>
   </div>
 </div>
+  </footer>
 
-    
+  <script>
+    // Theme
+    const toggle = document.getElementById('themeToggle');
+    const icon = document.getElementById('themeIcon');
+    const html = document.documentElement;
+    if (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      html.classList.add('dark'); icon.textContent = '☀️';
+    }
+    toggle.addEventListener('click', () => {
+      html.classList.toggle('dark');
+      const isDark = html.classList.contains('dark');
+      icon.textContent = isDark ? '☀️' : '🌙';
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
+
+    // Filter
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const cat = btn.dataset.cat;
+        document.querySelectorAll('#menuGrid > *').forEach(card => {
+          card.style.display = (cat === 'all' || card.dataset.cat === cat) ? '' : 'none';
+        });
+      });
+    });
+  </script>
+
 </body>
 </html>
