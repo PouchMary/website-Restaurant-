@@ -3,23 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../src/output.css">
+    <title></title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: 'orange',
+                        },
+                        secondary: {
+                            50: '#f5f3ff',
+                            100: '#ede9fe',
+                            200: '#ddd6fe',
+                            300: '#c4b5fd',
+                            400: '#a78bfa',
+                            500: '#8b5cf6',
+                            600: '#7c3aed',
+                            700: '#6d28d9',
+                            800: '#5b21b6',
+                            900: '#4c1d95',
+                        },
+                        dark: 'orange',
+                        light: 'white'
+                    }
+                }
+            }
+        }
+    </script>
+     <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: { extend: {
+        fontFamily: { display: ['Playfair Display','serif'], body: ['Jost','sans-serif'] },
+        colors: {
+          ember: { 50:'#fff8f0',100:'#ffecd6',300:'#f5a455',500:'#e07520',700:'#a04f0c',900:'#5c2a04' },
+          oak:   { 50:'#f5f3ef',100:'#e8e3d8',300:'#c2b89a',500:'#8a7660',700:'#5a4e3a',900:'#2c2418' }
+        }
+      }}
+    }
+  </script>
+  <style>
+    body { font-family: 'Jost', sans-serif; }
+    h1,h2,h3,.font-display { font-family: 'Playfair Display', serif; }
+    .nav-blur { backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); }
+    .menu-hero {
+      background-image: linear-gradient(135deg, rgba(30,18,6,0.92) 0%, rgba(80,45,10,0.7) 100%),
+        url('https://images.unsplash.com/photo-1481931098730-318b6f776db0?w=1400&q=80');
+      background-size: cover; background-position: center;
+    }
+    .card-hover { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .card-hover:hover { transform: translateY(-4px); box-shadow: 0 16px 32px rgba(0,0,0,0.12); }
+    .filter-btn { transition: all 0.2s; }
+    .filter-btn.active { background: #e07520; color: white; border-color: #e07520; }
+    .divider { width: 60px; height: 2px; background: linear-gradient(90deg,#e07520,#f5a455); margin: 1rem auto; }
+  </style>
 </head>
-
-
-
-<body class="bg-orange-50">
+<body class="bg-white dark:bg-black dark:to-black text-white dark:text-white min-h-screen transition-colors duration-300">
     <!-- Navigation -->
-      <nav class="fixed top-0 left-0 right-0 z-50 nav-blur bg-orange-400/80 dark:bg-oak-900/80 border-b border-oak-100 dark:border-oak-700">
+    <nav class="fixed top-0 left-0 right-0 z-50 nav-blur bg-orange-500 dark:bg-black border-white dark:border-black ">
     <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-      <a href="index.html" class="font-display text-xl font-bold text-ember-700 dark:text-ember-300">Ember <span class="text-oak-500">&</span> Oak</a>
-      <div class="hidden md:flex items-center gap-8 text-sm font-medium">
-        <a href="./home.html" class="hover:text-ember-500 transition-colors">Home</a>
-        <a href="menu.html" class="text-ember-b500 border-b border-ember-400 pb-0.5">Home</a>
-        <a href="./about.html" class="hover:text-ember-500 transition-colors">About</a>
-        <a href="contact.html" class="hover:text-ember-500 transition-colors">Contact</a>
-        <a href="./login.html"class="hover:text-ember-500 transition-colors">Login</a>
+      <a href="index.html" class="font-display text-xl font-bold text-ember-700 dark:text-ember-300">Khmer <span class="text-orange-900"></span> Delicacy</a>
+      <div class="hidden md:flex items-center gap-8 text-lg font-medium">
+        <a href="/index.html" class="hover:text-ember-500 transition-colors">Home</a>
+        <a href="../components/menu1.html" class="text-ember-500 border-b border-ember-400 pb-0.5">Menu</a>
+        <a href="../components/about1.html" class="hover:text-ember-500 transition-colors">About</a>
+        <a href="../components/contect.html" class="hover:text-ember-500 transition-colors">Contact</a>
+        <a href="../components/login.html"class="hover:text-ember-500 transition-colors">Login</a>
         <!-- <a href="auth.html" class="hover:text-ember-500 transition-colors"><button><link rel="stylesheet" href="./login.html">Login</button></a> -->
   
       </div>
@@ -31,18 +92,18 @@
 
 
     <!-- Hero Section -->
-    <section class="bg-gradient-to-r from-orange-100 to-orange-100  px-6 py-15 ">
-        <div class="container mx-auto px-8 text-center​​ mt-16">
-            <h1 class="text-4xl md:text-5xl font-bold mb-4">Wellcome to restaurant food </h1>
-            <p class="text-xl mb-8 max-w-2xl mx-auto">Welcome to [Restaurant Name], where every meal feels like coming home. We believe in serving delicious food made with love, fresh ingredients, and a touch of creativity. Whether you’re here for a quick bite, a family dinner, or a special celebration, we’re dedicated to making every visit memorable.!</p>
-            <button class="bg-yellow-500 hover:bg-yellow-600 text-orange-900 font-bold py-3 px-8 rounded-full text-lg transition duration-300">
+     <section  class="bg-white dark:bg-black text-black dark:text-white ">
+        <div class="container mx-auto px-8 text-center​​ mt-16 ">
+            <h1 class="text-4xl mb-8 max-w-2xl mx-auto text-4xl md:text-5xl font-bold mb-4 mx-auto ">Wellcome to restaurant food </h1>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">Welcome to Khmer Delicacy, where every meal feels like coming home. We believe in serving delicious food made with love, fresh ingredients, and a touch of creativity. Whether you’re here for a quick bite, a family dinner, or a special celebration, we’re dedicated to making every visit memorable.!</p>
+            <button class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-full text-lg transition duration-300">
                 Get Started <i class="fas fa-arrow-right ml-2"></i>
             </button>
         </div>
     </section>
 
     <!-- Animals Section -->
-    <section id="animals" class="py-12 bg-white">
+    <section id="animals" class="py-12 bg-white dark:bg-black">
         <div class="container mx-auto px-4 mt-16">
             <h2 class="text-3xl font-bold text-center mb-12 text-black">Khmer food delicous</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -99,15 +160,15 @@
 
 
 
-<section class="bg-white overflow-hidden pb-9 px-4 md:px-8">
+<section class="bg-white dark:bg-black overflow-hidden pb-9 px-4 md:px-8">
     <header class="flex mx-auto justify-between items-center max-w-[1300px] py-4 ">
     </header>
     <section
         class="relative  flex flex-col-reverse md:flex-row mx-auto justify-between items-center gap-9 md:gap-4 max-w-[1300px] py-4  my-12">
         <div class="md:w-[520px] z-20">
             <h1 class="text-3xl md:text-[36px] lg:text-[46px] leading-[56px] text-black font-bold mt-20">
-                <span class="text-black">Delicious moments start here.</h1>
-            <p class="text-base text-black mt-4 md:mt-9 mb-10 md:mb-16">
+                <span class="text-black dark:text-white">Delicious moments start here.</h1>
+            <p class="text-black dark:text-white mt-4 md:mt-9 mb-10 md:mb-16">
 We offer a variety of Khmer and international dishes, prepared with fresh ingredients, rich flavors, and excellent service. Moreover, we strive to create a memorable dining experience that you will never forget. Come and enjoy delicious food and wonderful moments with your family and friends.</p> 
         </div>
         <div class="p-4 z-20  rounded-[600px] md:rounded-bl-[600px]leading-tight lg:rounded-bl-[650px] bg-opacity-20"><img class="max-w-[800px] w-full" src="../images/images (41).jpg" alt="">
@@ -115,10 +176,10 @@ We offer a variety of Khmer and international dishes, prepared with fresh ingred
     </section>
  
 </section>
-	<div class="grid lg:grid-cols-2 gap-3">
+	<!-- <div class="grid lg:grid-cols-2 gap-3">
 	  <div class="grid grid-cols-2 lg:grid-cols-1 gap-3">
 		<figure class="relative w-full h-60">
-		  <img class="w-full h-full absolute top-0 start-0 object-cover rounded-xl" src="https://images.unsplash.com/photo-1670272505340-d906d8d77d03?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80" alt="Image Description">
+		  <img class="w-full h-full absolute top-0 start-0 object-cover rounded-xl" src="../images/images (40).jpg" alt="Image Description">
 		</figure>
 		<figure class="relative w-full h-60">
 		  <img class="w-full h-full absolute top-0 start-0 object-cover rounded-xl" src="https://images.unsplash.com/photo-1671726203638-83742a2721a1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80" alt="Image Description">
@@ -141,7 +202,7 @@ We offer a variety of Khmer and international dishes, prepared with fresh ingred
 		<img class="w-full h-full absolute top-0 start-0 object-cover rounded-xl" src="https://images.unsplash.com/photo-1671726203394-491c8b574a0a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=988&q=80" alt="Image Description">
 	  </figure>
 	</div>
-  <br><br><br><br><br><br><br><br>
+  <br><br><br><br><br><br><br><br> -->
 
 
 
@@ -155,19 +216,19 @@ We offer a variety of Khmer and international dishes, prepared with fresh ingred
       <form class="space-y-4 md:space-y-6" method="POST">
         <div>
           <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your full name</label>
-          <input type="text" name="name" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Emelia Erickson" required="">
+          <input type="text" name="name" id="name" class="bg-orange-50 border border-orange-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Emelia Erickson" required="">
         </div>
         <div>
           <label for="username" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Username</label>
-          <input type="text" name="username" id="username" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="emelia_erickson24" required="">
+          <input type="text" name="username" id="username" class="bg-orange-50 border border-orange-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="emelia_erickson24" required="">
         </div>
         <div>
           <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label>
-          <input type="password" name="password" id="password" placeholder="••••••••" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required="">
+          <input type="password" name="password" id="password" placeholder="••••••••" class="bg-orange-50 border border-orange-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-600 focus:border-orange-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required="">
         </div>
-        <button type="submit" class="w-full text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Create an account</button>
-        <p class="text-sm font-light text-gray-500 dark:text-gray-400">Already have an account? <a
-            class="font-medium text-blue-600 hover:underline dark:text-blue-500" href="/signin">Sign in here</a>
+        <button type="submit" class="w-full text-white bg-orange-600 hover:bg-orange-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-orange-600 dark:hover:bg-orange-700 dark:focus:ring-orange-800">Create an account</button>
+        <p class="text-sm font-light text-gray-500 dark:text-ora-400">Already have an account? <a
+            class="font-medium text-orange-600 hover:underline dark:text-orange-500" href="/signin">Sign in here</a>
         </p>
       </form>
     </div>
@@ -176,17 +237,20 @@ We offer a variety of Khmer and international dishes, prepared with fresh ingred
 
 <br><br><br><br><br><br><br><br>
 
-  
-<div class="mt-8 bg-orange-100 pt-9">
+   
+</section>
+    <!-- Footer -->
+     <footer>
+     <div class="mt-8 bg-orange-500 dark:bg-black pt-9 py-8 px-6 text-center text-sm transition-colors duration-300">
   <div class="mx-auto w-full max-w-[1166px] px-4 xl:px-0">
     <div class="flex flex-col justify-between sm:px-[18px] md:flex-row md:px-10">
       <div class="md:w-[316px]">
-        <p class="text-[18px] font-medium text-black">
-        <h1 class="text-black font-extrabold">
-          <span class="text-rose-600">YOUR</span>LOGO
+        <p class="text-[18px] font-medium text-white">
+        <h1  class="text-black dark:text-white font-extrabold">
+          <img src="../images/Liceria catering.png" alt="" width="100">
         </h1>
         </p>
-        <p class="mt-[18px] text-[15px] font-normal text-black/[80%]">A restaurant that offers a delicious dining experience and a cozy atmosphere. All dishes are cooked with fresh ingredients and special flavors that make you want to come back again and again. A great place to meet friends and family</p>
+        <p class="mt-[18px] text-[15px] font-normal text-white ">A restaurant that offers a delicious dining experience and a cozy atmosphere. All dishes are cooked with fresh ingredients and special flavors that make you want to come back again and again. A great place to meet friends and family</p>
         <div class="mt-[18px] flex gap-4">
            </div>
       </div>
@@ -202,8 +266,8 @@ We offer a variety of Khmer and international dishes, prepared with fresh ingred
 
           
           <div class="ml-[18px]">
-            <a href="tel:+911800123444" class="font-Inter text-[14px] font-medium text-black">+885: 070 965 815</a>
-            <p class="font-Inter text-[12px] font-medium text-black">Support Number</p>
+            <a href="tel:+911800123444" class="font-Inter text-[14px] font-medium text-white">+885: 070 965 815</a>
+            <p class="font-Inter text-[12px] font-medium text-white">Support Number</p>
           </div>
         </div>
         <div class="mt-[23px] flex">
@@ -215,8 +279,8 @@ We offer a variety of Khmer and international dishes, prepared with fresh ingred
             </svg>
           </div>
           <div class="ml-[18px]">
-            <a href="mailto:help@lorem.com" class="font-Inter text-[14px] font-medium text-black">help@lorem.com</a>
-            <p class="font-Inter text-[12px] font-medium text-black">Support Email</p>
+            <a href="mailto:help@lorem.com" class="font-Inter text-[14px] font-medium text-[#fff]">help@lorem.com</a>
+            <p class="font-Inter text-[12px] font-medium text-[#fff]">Support Email</p>
           </div>
         </div>
         <div class="mt-[23px] flex">
@@ -229,12 +293,12 @@ We offer a variety of Khmer and international dishes, prepared with fresh ingred
           </div>
           
           <div class="ml-[18px]">
-            <a href="mailto:help@lorem.com" class="font-Inter text-[14px] font-medium text-black">Toul Kork</a>
-            <p class="font-Inter text-[12px] font-medium text-black">Address</p>
+            <a href="mailto:help@lorem.com" class="font-Inter text-[14px] font-medium text-[#fff]">Toul Kork</a>
+            <p class="font-Inter text-[12px] font-medium text-white">Address</p>
           </div>
         </div>
       </div>
-      <div class="mt-6 flex w-full flex-col justify-between text-black sm:flex-row md:mt-0 md:max-w-[341px]">
+      <div class="mt-6 flex w-full flex-col justify-between text-white sm:flex-row md:mt-0 md:max-w-[341px]">
         <div class="">
           <p class="text-deutziawhite font-inter text-[18px] font-medium leading-normal">Pages</p>
           <ul>
@@ -264,9 +328,9 @@ We offer a variety of Khmer and international dishes, prepared with fresh ingred
         </div>
       </div>
     </div>
-    <hr class="mt-[30px] text-black" />
+    <hr class="mt-[30px] text-white" />
     <div class="flex items-center justify-center pb-8 pt-[9px] md:py-8">
-      <p class="text-[10px] font-normal text-black md:text-[12px]">
+      <p class="text-[10px] font-normal text-white md:text-[12px]">
         © Copyright
         <!-- -->2024
         <!-- -->, All Rights Reserved by YOUR WEBSITES. PVT. LTD
@@ -274,11 +338,34 @@ We offer a variety of Khmer and international dishes, prepared with fresh ingred
     </div>
   </div>
 </div>
-           
+  </footer>
+  <script>
+    // Theme
+    const toggle = document.getElementById('themeToggle');
+    const icon = document.getElementById('themeIcon');
+    const html = document.documentElement;
+    if (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      html.classList.add('dark'); icon.textContent = '☀️';
+    }
+    toggle.addEventListener('click', () => {
+      html.classList.toggle('dark');
+      const isDark = html.classList.contains('dark');
+      icon.textContent = isDark ? '☀️' : '🌙';
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
 
-
-
-
+    // Filter
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const cat = btn.dataset.cat;
+        document.querySelectorAll('#menuGrid > *').forEach(card => {
+          card.style.display = (cat === 'all' || card.dataset.cat === cat) ? '' : 'none';
+        });
+      });
+    });
+  </script>
 
 
 

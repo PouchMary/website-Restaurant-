@@ -25,19 +25,19 @@
             padding: 20px;
             text-align: center;
             font-family: "Google Sans", sans-serif;
-            color: #333;
+            color: black;
         }
 
         .hours-container h2 {
             font-size: 2.5rem;
             font-weight: 300;
             margin-bottom: 10px;
-            color: #555;
+            /* color:white; */
         }
 
         .hours-description {
             font-size: 1.1rem;
-            color: #666;
+            color: black;
             margin-bottom: 40px;
             line-height: 1.6;
         }
@@ -59,7 +59,7 @@
             padding: 15px;
             border-bottom: 1px solid #f0f0f0;
             font-size: 1rem;
-            color: #444;
+            /* color: black; */
         }
 
         .day-column {
@@ -69,7 +69,7 @@
         }
 
         .hours-table tr:hover {
-            background-color: #fafafa;
+            background-color:orange-500;
         }
 
         @media (max-width: 600px) {
@@ -106,19 +106,100 @@
     .filter-btn.active { background: #e07520; color: white; border-color: #e07520; }
     .divider { width: 60px; height: 2px; background: linear-gradient(90deg,#e07520,#f5a455); margin: 1rem auto; }
   </style>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['Cormorant Garamond', 'serif'],
+            sans: ['DM Sans', 'sans-serif'],
+          },
+          colors: {
+            cream: '#FAF7F2',
+            'warm-50': '#FDF8F3',
+            'warm-100': '#F5EDE0',
+            'warm-200': '#E8D5BB',
+            'warm-400': '#C4A47C',
+            'warm-600': '#9A7248',
+            'warm-800': '#6B4E2E',
+            'warm-900': '#3D2B14',
+            'rose-blush': '#F9EEF0',
+            'rose-mid': '#E8A8B4',
+            'rose-deep': '#9C4A5A',
+            'rose-dark': '#6B2D3A',
+            'slate-soft': '#EEF1F6',
+            'slate-mid': '#8A9BB5',
+            'slate-deep': '#2E4A72',
+            'slate-dark': '#1A2E4A',
+          },
+        },
+      },
+    }
+  </script>
+  <style>
+    body { font-family: 'DM Sans', sans-serif; }
+    .font-display { font-family: 'Cormorant Garamond', serif; }
+
+    .pkg-card {
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      cursor: pointer;
+    }
+    .pkg-card:hover { transform: translateY(-4px); }
+    .pkg-card.selected-solo   { box-shadow: 0 0 0 2px #9A7248; }
+    .pkg-card.selected-couple { box-shadow: 0 0 0 2px #9C4A5A; }
+    .pkg-card.selected-family { box-shadow: 0 0 0 2px #2E4A72; }
+
+    .step { display: none; }
+    .step.active { display: block; }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(12px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .fade-up { animation: fadeUp 0.35s ease forwards; }
+
+    input, select, textarea {
+      font-family: 'DM Sans', sans-serif;
+    }
+  </style>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: { extend: {
+        fontFamily: { display: ['Playfair Display','serif'], body: ['Jost','sans-serif'] },
+        colors: {
+          ember: { 50:'#fff8f0',100:'#ffecd6',300:'#f5a455',500:'#e07520',700:'#a04f0c',900:'#5c2a04' },
+          oak:   { 50:'#f5f3ef',100:'#e8e3d8',300:'#c2b89a',500:'#8a7660',700:'#5a4e3a',900:'#2c2418' }
+        }
+      }}
+    }
+  </script>
+  <style>
+    body { font-family: 'Jost', sans-serif; }
+    h1,h2,h3,.font-display { font-family: 'Playfair Display', serif; }
+    .nav-blur { backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); }
+    .menu-hero {
+      background-image: linear-gradient(135deg, rgba(30,18,6,0.92) 0%, rgba(80,45,10,0.7) 100%),
+        url('https://images.unsplash.com/photo-1481931098730-318b6f776db0?w=1400&q=80');
+      background-size: cover; background-position: center;
+    }
+    .card-hover { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .card-hover:hover { transform: translateY(-4px); box-shadow: 0 16px 32px rgba(0,0,0,0); }
+    .filter-btn { transition: all 0.2s; }
+    .filter-btn.active { background: #e07520; color: white; border-color: #e07520; }
+    .divider { width: 60px; height: 2px; background: linear-gradient(90deg,#e07520,#f5a455); margin: 1rem auto; }
+  </style>
 </head>
-
-<body class="bg-white dark:bg-gra text-black dark:text-white min-h-screen transition-colors duration-300">
-
-    
-  <nav class="fixed top-0 left-0 right-0 z-50 nav-blur bg-orange-500 dark:bg-oak-900/80 border-b border-oak-100 dark:border-oak-3000 ">
+<body class="bg-white dark:to-black text-gray-900 dark:text-white min-h-screen transition-colors duration-300">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 nav-blur bg-orange-500 dark:bg-oak-900/80 border-b border-oak-100 dark:border-oak-3000 ">
     <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-      <a href="index.html" class="font-display text-lg font-bold text-ember-700 dark:text-ember-300">Ember <span class="text-oak-500">&</span> Oak</a>
+      <a href="index.html" class="font-display text-xl font-bold text-ember-700 dark:text-ember-300">Khmer <span class="text-orange-500"></span> Delicacy</a>
       <div class="hidden md:flex items-center gap-8 text-lg font-medium">
-        <a href="./about1.html" class="hover:text-ember-500 transition-colors">Home</a>
-        <a href="./menu.html" class="text-ember-500 border-b border-ember-400 pb-0.5">Menu</a>
-        <a href="./about.html" class="hover:text-ember-500 transition-colors">About</a>
-        <a href="./login.html" class="hover:text-ember-500 transition-colors">Contact</a>
+        <a href="./home.html" class="hover:text-ember-500 transition-colors">Home</a>
+       <a href="./about.html" class="hover:text-ember-500 transition-colors">Menu</a>
+        <a href="menu.html" class="text-ember-500 border-b border-ember-400 pb-0.5">about</a>
+        <a href="contact.html" class="hover:text-ember-500 transition-colors">Contact</a>
         <a href="./login.html"class="hover:text-ember-500 transition-colors">Login</a>
         <!-- <a href="auth.html" class="hover:text-ember-500 transition-colors"><button><link rel="stylesheet" href="./login.html">Login</button></a> -->
   
@@ -133,10 +214,10 @@
   <section class="w-full bg-orange-400 dark:bg-black py-16 text-black dark:text-white pt-32">
   <div class="w-full max-w-4xl mx-auto px-4 text-center">
     <h2 class="text-3xl md:text-4xl font-bold mb-6">
-      Welcome to Ember & Oak
+      Welcome to Khmer Delicacy
     </h2>
 
-    <p class="text-lg md:text-xl mb-8 text-black dark:text-gray-300">
+    <p class="text-lg md:text-xl mb-8 text-black dark:text-white">
       Sign up now and start your dining experience.
     </p>
 
@@ -148,13 +229,13 @@
 </section>
 
   <!-- SIGNUP FORM — full width background -->
-  <div class="w-full min-h-screen bg-white flex flex-col justify-center py-12 sm:px-6 lg:px-8 text-gray-900 dark:text-white">
+  <div class="w-full min-h-screen bg-white dark:bg-black flex flex-col justify-center py-12 sm:px-6 lg:px-8 text-gray-900 dark:text-white">
   <div class="mx-auto w-full max-w-md">
     <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900 dark:text-white">
       Create a new account
     </h2>
 
-    <p class="mt-2 text-center text-sm text-gray-500 dark:text-gray-300">
+    <p class="mt-2 text-center text-sm text-gray-500 dark:text-white>
       Or
       <a href="#" class="font-medium text-orange-600 hover:text-orange-500 dark:text-orange-400">
         login to your account
@@ -231,263 +312,20 @@
   </div>
 </div>
 
-<div class="sm:flex sm:flex-col sm:align-center p-10">
-    <div class="relative self-center bg-slate-200 rounded-lg p-0.5 flex">
-        <button type="button"
-            class="relative w-1/2 rounded-md py-2 text-sm font-medium whitespace-nowrap focus:outline-none sm:w-auto sm:px-8 bg-slate-50 border-slate-50 text-slate-900 shadow-sm">Monthly
-            billing
-        </button>
-        <button type="button"
-            class="ml-0.5 relative w-1/2 border rounded-md py-2 text-sm font-medium whitespace-nowrap focus:outline-none sm:w-auto sm:px-8 border-transparent text-slate-900">Yearly
-            billing
-        </button>
-    </div>
-    <div
-        class="mt-12 space-y-3 sm:mt-16 sm:space-y-0 sm:grid sm:grid-cols-3 sm:gap-6 md:max-w-5xl md:mx-auto xl:grid-cols-3">
-        <div class="border border-slate-200 rounded-lg shadow-sm divide-y divide-slate-200">
-            <div class="p-6">
-                <h2 class="text-xl leading-6 font-bold text-slate-900">Starter</h2>
-                <p class="mt-2 text-base text-slate-700 leading-tight">For new makers who want to fine-tune and test an
-                    idea.</p>
-                <p class="mt-8">
-                    <span class="text-4xl font-bold text-slate-900 tracking-tighter">$0</span>
 
-                    <span class="text-base font-medium text-slate-500">/mo</span>
-                </p><a href="/sign-up"
-                    class="mt-8 block w-full bg-slate-900 rounded-md py-2 text-sm font-semibold text-white text-center">Join
-                    as a Starter</a>
-            </div>
-            <div class="pt-6 pb-8 px-6">
-                <h3 class="text-sm font-bold text-slate-900 tracking-wide uppercase">What's included</h3>
-                <ul role="list" class="mt-4 space-y-3">
-                    <li class="flex space-x-3">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0 h-5 w-5 text-green-400" width="24"
-                            height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
-                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                            <path d="M5 12l5 5l10 -10"></path>
-                        </svg>
-                        <span class="text-base text-slate-700">1 landing page included</span>
-                    </li>
-                    <li class="flex space-x-3">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0 h-5 w-5 text-green-400" width="24"
-                            height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
-                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                            <path d="M5 12l5 5l10 -10"></path>
-                        </svg>
-                        <span class="text-base text-slate-700">1,000 visits/mo</span>
-                    </li>
-                    <li class="flex space-x-3">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0 h-5 w-5 text-green-400" width="24"
-                            height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
-                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                            <path d="M5 12l5 5l10 -10"></path>
-                        </svg>
-                        <span class="text-base text-slate-700">Access to all UI blocks</span>
-                    </li>
-                    <li class="flex space-x-3">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0 h-5 w-5 text-green-400" width="24"
-                            height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
-                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                            <path d="M5 12l5 5l10 -10"></path>
-                        </svg>
-                        <span class="text-base text-slate-700">50 conversion actions included</span>
-                    </li>
-                    <li class="flex space-x-3">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0 h-5 w-5 text-green-400" width="24"
-                            height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
-                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                            <path d="M5 12l5 5l10 -10"></path>
-                        </svg>
-                        <span class="text-base text-slate-700">5% payment commission</span>
-                    </li>
-                    <li class="flex space-x-3">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0 h-5 w-5 text-green-400" width="24"
-                            height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
-                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                            <path d="M5 12l5 5l10 -10"></path>
-                        </svg>
-                        <span class="text-base text-slate-700">Real-time analytics</span>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="border border-slate-200 rounded-lg shadow-sm divide-y divide-slate-200">
-            <div class="p-6">
-                <h2 class="text-xl leading-6 font-bold text-slate-900">Superior</h2>
-                <p class="mt-2 text-base text-slate-700 leading-tight">For creators with multiple ideas who want to
-                    efficiently test and refine them.</p>
-                <p class="mt-8">
-                    <span class="text-4xl font-bold text-slate-900 tracking-tighter">$8</span>
-
-                    <span class="text-base font-medium text-slate-500">/mo</span>
-                </p><a href="/sign-up"
-                    class="mt-8 block w-full bg-slate-900 rounded-md py-2 text-sm font-semibold text-white text-center">Join
-                    as a Superior</a>
-            </div>
-            <div class="pt-6 pb-8 px-6">
-                <h3 class="text-sm font-bold text-slate-900 tracking-wide uppercase">What's included</h3>
-                <ul role="list" class="mt-4 space-y-3">
-                    <li class="flex space-x-3">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0 h-5 w-5 text-green-400" width="24"
-                            height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
-                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                            <path d="M5 12l5 5l10 -10"></path>
-                        </svg>
-                        <span class="text-base text-slate-700">All Free features</span>
-                    </li>
-                    <li class="flex space-x-3">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0 h-5 w-5 text-green-400" width="24"
-                            height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
-                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                            <path d="M5 12l5 5l10 -10"></path>
-                        </svg>
-                        <span class="text-base text-slate-700">5 landing pages included</span>
-                    </li>
-                    <li class="flex space-x-3">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0 h-5 w-5 text-green-400" width="24"
-                            height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
-                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                            <path d="M5 12l5 5l10 -10"></path>
-                        </svg>
-                        <span class="text-base text-slate-700">50,000 visits/mo</span>
-                    </li>
-                    <li class="flex space-x-3">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0 h-5 w-5 text-green-400" width="24"
-                            height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
-                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                            <path d="M5 12l5 5l10 -10"></path>
-                        </svg>
-                        <span class="text-base text-slate-700">1,000 conversion actions included</span>
-                    </li>
-                    <li class="flex space-x-3">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0 h-5 w-5 text-green-400" width="24"
-                            height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
-                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                            <path d="M5 12l5 5l10 -10"></path>
-                        </svg>
-                        <span class="text-base text-slate-700">1% payment commission</span>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="border border-slate-200 rounded-lg shadow-sm divide-y divide-slate-200">
-            <div class="p-6">
-                <h2 class="text-xl leading-6 font-bold text-slate-900">Shipper</h2>
-                <p class="mt-2 text-base text-slate-700 leading-tight">For productive shippers who want to work more
-                    efficiently.</p>
-                <p class="mt-8">
-                    <span class="text-4xl font-bold text-slate-900 tracking-tighter">$15</span>
-
-                    <span class="text-base font-medium text-slate-500">/mo</span>
-                </p><a href="/sign-up"
-                    class="mt-8 block w-full bg-slate-900 rounded-md py-2 text-sm font-semibold text-white text-center">Join
-                    as a Shipper</a>
-            </div>
-            <div class="pt-6 pb-8 px-6">
-                <h3 class="text-sm font-bold text-slate-900 tracking-wide uppercase">What's included</h3>
-                <ul role="list" class="mt-4 space-y-3">
-                    <li class="flex space-x-3">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0 h-5 w-5 text-green-400" width="24"
-                            height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
-                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                            <path d="M5 12l5 5l10 -10"></path>
-                        </svg>
-                        <span class="text-base text-slate-700">All Standard features</span>
-                    </li>
-                    <li class="flex space-x-3">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0 h-5 w-5 text-green-400" width="24"
-                            height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
-                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                            <path d="M5 12l5 5l10 -10"></path>
-                        </svg>
-                        <span class="text-base text-slate-700">20 landing pages included</span>
-                    </li>
-                    <li class="flex space-x-3">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0 h-5 w-5 text-green-400" width="24"
-                            height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
-                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                            <path d="M5 12l5 5l10 -10"></path>
-                        </svg>
-                        <span class="text-base text-slate-700">200,000 visits/mo</span>
-                    </li>
-                    <li class="flex space-x-3">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0 h-5 w-5 text-green-400" width="24"
-                            height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
-                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                            <path d="M5 12l5 5l10 -10"></path>
-                        </svg>
-                        <span class="text-base text-slate-700">5,000 conversion actions included</span>
-                    </li>
-                    <li class="flex space-x-3">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0 h-5 w-5 text-green-400" width="24"
-                            height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
-                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                            <path d="M5 12l5 5l10 -10"></path>
-                        </svg>
-                        <span class="text-base text-slate-700">No payment commission</span>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</div>
+  
 
 
+ 
 
-  <!-- OPENING HOURS — full width -->
-  <section class="w-full">
-    <div class="hours-container">
-      <h2>Opening Hours</h2>
-      <p class="hours-description">
-        We are open for breakfast, lunch, and dinner. Make a reservation today and come<br>
-        and enjoy some fine dining at our restaurant in Phnom Penh.
-      </p>
-      <table class="hours-table">
-        <thead>
-          <tr>
-            <th></th>
-            <th>Breakfast</th>
-            <th>Lunch</th>
-            <th>Dinner</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td class="day-column">Monday</td><td>6:30 am – 10:00 am</td><td>11:30 am – 2:30 pm</td><td>6:00 pm – 10:30 pm</td></tr>
-          <tr><td class="day-column">Tuesday</td><td>6:30 am – 10:00 am</td><td>11:30 am – 2:30 pm</td><td>6:00 pm – 10:30 pm</td></tr>
-          <tr><td class="day-column">Wednesday</td><td>6:30 am – 10:00 am</td><td>11:30 am – 2:30 pm</td><td>6:00 pm – 10:30 pm</td></tr>
-          <tr><td class="day-column">Thursday</td><td>6:30 am – 10:00 am</td><td>11:30 am – 2:30 pm</td><td>6:00 pm – 10:30 pm</td></tr>
-          <tr><td class="day-column">Friday</td><td>6:30 am – 10:00 am</td><td>11:30 am – 2:30 pm</td><td>6:00 pm – 10:30 pm</td></tr>
-          <tr><td class="day-column">Saturday</td><td>6:30 am – 10:00 am</td><td>11:30 am – 2:30 pm</td><td>6:00 pm – 10:30 pm</td></tr>
-          <tr><td class="day-column">Sunday</td><td>6:30 am – 10:00 am</td><td>11:30 am – 2:30 pm</td><td>6:00 pm – 10:30 pm</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
-
-  <footer>
+    <footer>
      <div class="mt-8 bg-orange-500 dark:bg-black pt-9 py-8 px-6 text-center text-sm transition-colors duration-300">
   <div class="mx-auto w-full max-w-[1166px] px-4 xl:px-0">
     <div class="flex flex-col justify-between sm:px-[18px] md:flex-row md:px-10">
       <div class="md:w-[316px]">
         <p class="text-[18px] font-medium text-white">
         <h1  class="text-black dark:text-white font-extrabold">
-          <span class="text-rose-600">YOUR</span>LOGO
+          <img src="../images/Liceria catering.png" alt="" width="100">
         </h1>
         </p>
         <p class="mt-[18px] text-[15px] font-normal text-white ">A restaurant that offers a delicious dining experience and a cozy atmosphere. All dishes are cooked with fresh ingredients and special flavors that make you want to come back again and again. A great place to meet friends and family</p>
@@ -579,7 +417,7 @@
   </div>
 </div>
   </footer>
-<script>
+  <script>
     // Theme
     const toggle = document.getElementById('themeToggle');
     const icon = document.getElementById('themeIcon');
@@ -606,6 +444,11 @@
       });
     });
   </script>
+
+
+
+
+
 
 </body>
 </html>

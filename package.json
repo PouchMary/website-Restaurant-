@@ -10,9 +10,9 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "tailwindcss": "^4.2.4"
+    "tailwindcss": "^4.3.0"
   },
   "dependencies": {
-    "@tailwindcss/cli": "^4.2.4"
+    "@tailwindcss/cli": "^4.3.0"
   }
 }
