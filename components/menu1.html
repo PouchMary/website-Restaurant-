@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="scroll-smooth">4
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Menu — Ember & Oak</title>
+  <title>Khmer Delicacy</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="./login.html">
@@ -15,10 +15,10 @@
       darkMode: 'class',
       theme: { extend: {
         fontFamily: { display: ['Playfair Display','serif'], body: ['Jost','sans-serif'] },
-        colors: {
-          ember: { 50:'#fff8f0',100:'#ffecd6',300:'#f5a455',500:'#e07520',700:'#a04f0c',900:'#5c2a04' },
-          oak:   { 50:'#f5f3ef',100:'#e8e3d8',300:'#c2b89a',500:'#8a7660',700:'#5a4e3a',900:'#2c2418' }
-        }
+        // colors: {
+        //   ember: { 50:'#fff8f0',100:'#ffecd6',300:'#f5a455',500:'#e07520',700:'#a04f0c',900:'#5c2a04' },
+        //   oak:   { 50:'#f5f3ef',100:'#e8e3d8',300:'#c2b89a',500:'#8a7660',700:'#5a4e3a',900:'#2c2418' }
+        // }
       }}
     }
   </script>
@@ -37,13 +37,14 @@
     .filter-btn.active { background: #e07520; color: white; border-color: #e07520; }
     .divider { width: 60px; height: 2px; background: linear-gradient(90deg,#e07520,#f5a455); margin: 1rem auto; }
   </style>
-</head>
+  
 
+</head>
 
 <body class="bg-white dark:bg-black text-black dark:text-white min-h-screen transition-colors duration-300 ">
 
   <!-- NAV -->
-  <nav class="fixed top-0 left-0 right-0 z-50 nav-blur bg-orange-500 dark:bg-oak-900/80 border-b border-oak-100 dark:border-oak-3000 ">
+  <nav class="fixed top-0 left-0 right-0 z-50 nav-blur bg-orange-500 dark:bg-black border-orange-100 dark:border-orange-300 ">
     <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
       <a href="index.html" class="font-display text-xl font-bold text-ember-700 dark:text-ember-300">Ember <span class="text-oak-500">&</span> Oak</a>
       <div class="hidden md:flex items-center gap-8 text-lg font-medium">
@@ -52,12 +53,15 @@
         <a href="../components/about1.html" class="hover:text-ember-500 transition-colors">About</a>
         <a href="../components/contect.html" class="hover:text-ember-500 transition-colors">Contact</a>
         <a href="../components/login.html"class="hover:text-ember-500 transition-colors">Login</a>
+
+        
         <!-- <a href="auth.html" class="hover:text-ember-500 transition-colors"><button><link rel="stylesheet" href="./login.html">Login</button></a> -->
   
       </div>
       <button id="themeToggle" class="w-9 h-9 rounded-full bg-oak-100 dark:bg-oak-700 flex items-center justify-center hover:bg-oak-200 dark:hover:bg-oak-600 transition-colors">
         <span id="themeIcon">🌙</span>
       </button>
+        
     </div>
   </nav>
 
@@ -89,14 +93,14 @@
 
 
       <!-- Starters -->
-      <a href="detail.html?id=1" class="bg-white dark:bg-gray-800 text-black dark:text-white overflow-hidden shadow-sm border-100 dark:border-700" data-cat="starter">
+      <a href="../components/ditail/menu_detail2.html" class="bg-white dark:bg-gray-800 text-black dark:text-white overflow-hidden shadow-sm border-100 dark:border-700" data-cat="starter">
         <div class="h-48 overflow-hidden">
           <img src="../images/images (60).jpg" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"/>
         </div>
         <div class="p-5">
           <span class="text-xs uppercase tracking-wider text-ember-500 font-medium">Starter</span>
           <h3 class="font-display text-lg mt-1 mb-1">Bay Cha</h3>
-          <p class="text-oak-400 dark:text-oak-300 text-lg mb-4 line-clamp-2">Golden rice with fresh parsley.
+          <p class="text-oak-400 dark:text-oyy5555555566ak-300 text-lg mb-4 line-clamp-2">Golden rice with fresh parsley.
               Stir‑fried meat with carrots and peppers.
               Fresh cucumbers and tomatoes for balance.</p>
           <div class="flex justify-between items-center">
@@ -106,7 +110,7 @@
         </div>
       </a>
 
-      <a href="detail.html?id=4" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700" data-cat="starter">
+      <a href="../components/ditail/menu_detail3.html" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700" data-cat="starter">
         <div class="h-48 overflow-hidden">
           <img src="../images/images (61).jpg" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"/>
         </div>
@@ -122,7 +126,7 @@
       </a>
 
       <!-- Mains -->
-      <a href="detail.html?id=2" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700 ring-2 ring-ember-300" data-cat="main">
+      <a href="../components/ditail/menu_detail4.html" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700 ring-2 ring-ember-300" data-cat="main">
         <div class="h-48 overflow-hidden relative">
           <img src="../images/images (62).jpg" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"/>
           <span class="absolute top-3 right-3 bg-ember-500 text-white text-xs px-3 py-1 rounded-full">⭐ Best Seller</span>
@@ -141,7 +145,7 @@
 
 
        <!-- Starters -->
-      <a href="detail.html?id=1" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700" data-cat="starter">
+      <a href="../components/ditail/menu_detail4.html" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700" data-cat="starter">
         <div class="h-48 overflow-hidden">
           <img src="../images/images (64).jpg" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"/>
         </div>
@@ -157,7 +161,7 @@
       </a>
 
 
-  <a href="detail.html?id=4" class="bg-white dark:bg-gray-800 text-black dark:text-white  rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700" data-cat="starter">
+  <a href="../components/ditail/menu_detail6.html" class="bg-white dark:bg-gray-800 text-black dark:text-white  rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700" data-cat="starter">
         <div class="h-48 overflow-hidden">
           <img src="../images/images (79).jpg" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"/>
         </div>
@@ -173,7 +177,7 @@
       </a>
 
       <!-- Mains -->
-      <a href="detail.html?id=2" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700 ring-2 ring-ember-300" data-cat="main">
+      <a href="../components/ditail/menu_detail7.html" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700 ring-2 ring-ember-300" data-cat="main">
         <div class="h-48 overflow-hidden relative">
           <img src="../images/images (80).jpg" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"/>
           <span class="absolute top-3 right-3 bg-ember-500 text-white text-xs px-3 py-1 rounded-full">⭐ Best Seller</span>
@@ -190,7 +194,7 @@
       </a>
 
        <!-- Starters -->
-      <a href="detail.html?id=1" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700" data-cat="starter">
+      <a href="../components/ditail/menu_detail8.html" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700" data-cat="starter">
         <div class="h-48 overflow-hidden">
           <img src="../images/images (103).jpg" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"/>
         </div>
@@ -205,7 +209,7 @@
         </div>
       </a>
 
-        <a href="detail.html?id=4" class="bg-white dark:bg-gray-800 text-black dark:text-white  rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700" data-cat="starter">
+        <a href="../components/ditail/menu_detail9.html" class="bg-white dark:bg-gray-800 text-black dark:text-white  rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700" data-cat="starter">
         <div class="h-48 overflow-hidden">
           <img src="../images/images (109).jpg" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"/>
         </div>
@@ -220,8 +224,7 @@
         </div>
       </a>
 
-      <!-- Mains -->
-      <a href="detail.html?id=2" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700 ring-2 ring-ember-300" data-cat="main">
+      <a href="../components/ditail/menu_detail10.html" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700 ring-2 ring-ember-300" data-cat="main">
         <div class="h-48 overflow-hidden relative">
           <img src="../images/images (107).jpg" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"/>
           <span class="absolute top-3 right-3 bg-ember-500 text-white text-xs px-3 py-1 rounded-full">⭐ Best Seller</span>
@@ -237,8 +240,7 @@
         </div>
       </a>
 
-       <!-- Starters -->
-      <a href="detail.html?id=1" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700" data-cat="starter">
+      <a href="../components/ditail/menu_detail12.html" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700" data-cat="starter">
         <div class="h-48 overflow-hidden">
           <img src="../images/images (106).jpg" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"/>
         </div>
@@ -253,9 +255,7 @@
         </div>
       </a>
 
-      
-
-      <a href="detail.html?id=1" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700" data-cat="starter">
+      <a href="../components/ditail/menu_detail12.html" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700" data-cat="starter">
         <div class="h-48 overflow-hidden">
           <img src="../images/images (65).jpg" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"/>
         </div>
@@ -270,16 +270,13 @@
         </div>
       </a>
 
-      
-
-      <!-- Mains -->
-      <a href="detail.html?id=2" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700 ring-2 ring-ember-300" data-cat="main">
+      <a href="../components/ditail/menu_detail12.html" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700 ring-2 ring-ember-300" data-cat="main">
         <div class="h-48 overflow-hidden relative">
           <img src="../images/images (10).jpg"  class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"/>
           <span class="absolute top-3 right-3 bg-ember-500 text-white text-xs px-3 py-1 rounded-full">⭐ Best Seller</span>
         </div>
         <div class="p-5">
-          <span class="text-xs uppercase tracking-wider text-ember-500 font-medium">Main Course</span>
+          <span class="text-xs uppercase tracking-wider text-ember-500 font-medium"></span>
           <h3 class="font-display text-lg mt-1 mb-1">Num Banh Chok</h3>
           <p class="text-oak-400 dark:text-oak-300 text-sm mb-4 line-clamp-2">A refreshing Cambodia rice noodle dish with fragrant fish curry, made with rice noodels, fish, lemongrass, turmeric, kroeung, and fresh vegetable light, aromatic, and irresistibly delicious.</p>
           <div class="flex justify-between items-center">
@@ -289,14 +286,12 @@
         </div>
       </a>
 
-
- <!-- Starters -->
-      <a href="detail.html?id=1" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700" data-cat="starter">
+      <a href="../components/ditail/menu_detail13.html" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700" data-cat="starter">
         <div class="h-48 overflow-hidden">
           <img src="../images/images (66).jpg" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"/>
         </div>
         <div class="p-5">
-          <span class="text-xs uppercase tracking-wider text-ember-500 font-medium">Starter</span>
+          <span class="text-xs uppercase tracking-wider text-ember-500 font-medium"></span>
           <h3 class="font-display text-lg mt-1 mb-1">Smalor Korkor</h3>
           <p class="text-oak-400 dark:text-oak-300 text-sm mb-4 line-clamp-2">A tranditional Cambodia vegatable and meat stew made with kroeung, fish, and a variety of vegetable like pumpkin, eggplant, and long beans rich, hearty, and deeply flavorful with authentic howe made taste that.</p>
           <div class="flex justify-between items-center">
@@ -306,14 +301,15 @@
         </div>
       </a>
 
-      <a href="detail.html?id=4" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700" data-cat="starter">
+      <a href="../components/ditail/menu_detail14.html" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700" data-cat="starter">
         <div class="h-48 overflow-hidden">
           <img src="../images/images (33).jpg" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"/>
         </div>
         <div class="p-5">
           <span class="text-xs uppercase tracking-wider text-ember-500 font-medium">Starter</span>
           <h3 class="font-display text-lg mt-1 mb-1">Prahok chhom Hai with egg</h3>
-          <p class="text-oak-400 dark:text-oak-300 text-sm mb-4 line-clamp-2">A traditional Cambodian steamed fermented fish dish mixed with eggs, prahok, garlic, and spices—rich, savory, and irresistibly aromatic with a bold Khmer flavor that makes every bite unforgettable.</p>
+          <p class="text-oak-400 dark:text-oak-300 t
+          ext-sm mb-4 line-clamp-2">A traditional Cambodian steamed fermented fish dish mixed with eggs, prahok, garlic, and spices—rich, savory, and irresistibly aromatic with a bold Khmer flavor that makes every bite unforgettable.</p>
           <div class="flex justify-between items-center">
             <span class="text-ember-500 font-display text-lg font-bold">$4</span>
             <span class="text-xs text-oak-300 dark:text-oak-400">Details →</span>
@@ -321,8 +317,7 @@
         </div>
       </a>
 
-      <!-- Mains -->
-      <a href="detail.html?id=2" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700 ring-2 ring-ember-300" data-cat="main">
+      <a href="../components/ditail/menu_detaial15.html" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700 ring-2 ring-ember-300" data-cat="main">
         <div class="h-48 overflow-hidden relative">
           <img src="../images/images (68).jpg" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"/>
           <span class="absolute top-3 right-3 bg-ember-500 text-white text-xs px-3 py-1 rounded-full">⭐ Best Seller</span>
@@ -338,9 +333,7 @@
         </div>
       </a>
 
-
- <!-- Starters -->
-      <a href="detail.html?id=1" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700" data-cat="starter">
+      <a href="../components/ditail/menu_detail16.html" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700" data-cat="starter">
         <div class="h-48 overflow-hidden">
           <img src="../images/images (69).jpg" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"/>
         </div>
@@ -355,7 +348,7 @@
         </div>
       </a>
 
-      <a href="detail.html?id=4"​​​ class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700" data-cat="starter">
+      <a href="../components/ditail/menu_detail17.html"​​​ class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700" data-cat="starter">
         <div class="h-48 overflow-hidden">
           <img src="../images/images (1).jpg" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"/>
         </div>
@@ -371,7 +364,7 @@
       </a>
 
       <!-- Mains -->
-      <a href="detail.html?id=2" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700 ring-2 ring-ember-300" data-cat="main">
+      <a href="../components/ditail/menu_detail18.html" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700 ring-2 ring-ember-300" data-cat="main">
         <div class="h-48 overflow-hidden relative">
           <img src="../images/images (2).jpg" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"/>
           <span class="absolute top-3 right-3 bg-ember-500 text-white text-xs px-3 py-1 rounded-full">⭐ Best Seller</span>
@@ -388,7 +381,7 @@
       </a>
 
       
-      <a href="detail.html?id=2" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700 ring-2 ring-ember-300" data-cat="main">
+      <a href="../components/ditail/menu_detail19.html" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700 ring-2 ring-ember-300" data-cat="main">
         <div class="h-48 overflow-hidden relative">
           <img src="../images/images (72).jpg" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"/>
           <span class="absolute top-3 right-3 bg-ember-500 text-white text-xs px-3 py-1 rounded-full">⭐ Best Seller</span>
@@ -405,7 +398,7 @@
       </a>
 
 
-      <a href="detail.html?id=4" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700" data-cat="starter">
+      <a href="../components/ditail/menu_detail20.html" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700" data-cat="starter">
         <div class="h-48 overflow-hidden">
           <img src="../images/images (73).jpg" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"/>
         </div>
@@ -421,7 +414,7 @@
       </a>
 
       <!-- Mains -->
-      <a href="detail.html?id=2" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700 ring-2 ring-ember-300" data-cat="main">
+      <a href="../components/ditail/menu_detail21.html" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700 ring-2 ring-ember-300" data-cat="main">
         <div class="h-48 overflow-hidden relative">
           <img src="../images/images (5).jpg" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"/>
           <span class="absolute top-3 right-3 bg-ember-500 text-white text-xs px-3 py-1 rounded-full">⭐ Best Seller</span>
@@ -439,7 +432,7 @@
 
 
  <!-- Starters -->
-      <a href="detail.html?id=1" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700" data-cat="starter">
+      <a href="../components/ditail/menu_detail22.html" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700" data-cat="starter">
         <div class="h-48 overflow-hidden">
           <img src="../images/images (15).jpg" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"/>
         </div>
@@ -454,7 +447,7 @@
         </div>
       </a>
 
-      <a href="detail.html?id=4" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700" data-cat="dessert">
+      <a href="../components/ditail/menu_detail23.html" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700" data-cat="dessert">
         <div class="h-48 overflow-hidden">
           <img src="../images/images (170).jpg" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"/>
         </div>
@@ -470,7 +463,7 @@
       </a>
 
       <!-- Mains -->
-      <a href="detail.html?id=2" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700 ring-2 ring-ember-300" data-cat="dessert">
+      <a href="../components/ditail/menu_detail24.html" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700 ring-2 ring-ember-300" data-cat="dessert">
         <div class="h-48 overflow-hidden relative">
           <img src="../images/images (161).jpg" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"/>
           <span class="absolute top-3 right-3 bg-ember-500 text-white text-xs px-3 py-1 rounded-full">⭐ Best Seller</span>
@@ -488,7 +481,7 @@
 
 
  <!-- Starters -->
-      <a href="detail.html?id=1" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700" data-cat="dessert">
+      <a href="../components/ditail/menu_detail24.html" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700" data-cat="dessert">
         <div class="h-48 overflow-hidden">
           <img src="../images/images (159).jpg" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"/>
         </div>
@@ -503,7 +496,7 @@
         </div>
       </a>
 
-      <a href="detail.html?id=4" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700" data-cat="dessert">
+      <a href="../components/ditail/menu_detail25.html" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700" data-cat="dessert">
         <div class="h-48 overflow-hidden">
           <img src="../images/images (158).jpg" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"/>
         </div>
@@ -537,7 +530,7 @@
 
 
  <!-- Starters -->
-      <a href="detail.html?id=1" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700" data-cat="dessert">
+      <a href="../components/ditail/menu_detail25.html" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700" data-cat="dessert">
         <div class="h-48 overflow-hidden">
           <img src="../images/images (151).jpg" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"/>
         </div>
@@ -552,7 +545,7 @@
         </div>
       </a>
 
-      <a href="detail.html?id=4" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700" data-cat="dessert">
+      <a href="../components/ditail/menu_detail26.html" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700" data-cat="dessert">
         <div class="h-48 overflow-hidden">
           <img src="../images/images (149).jpg" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"/>
         </div>
@@ -569,7 +562,7 @@
       </a>
 
       <!-- Mains -->
-      <a href="detail.html?id=2" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700 ring-2 ring-ember-300" data-cat="dessert">
+      <a href="../components/ditail/menu_detail27.html" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700 ring-2 ring-ember-300" data-cat="dessert">
         <div class="h-48 overflow-hidden relative">
           <img src="../images/images (147).jpg" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"/>
           <span class="absolute top-3 right-3 bg-ember-500 text-white text-xs px-3 py-1 rounded-full">⭐ Best Seller</span>
@@ -588,7 +581,7 @@
 
 
  <!-- Starters -->
-      <a href="detail.html?id=1" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700" data-cat="dessert">
+      <a href="../components/ditail/menu_detail28.html" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700" data-cat="dessert">
         <div class="h-48 overflow-hidden">
           <img src="../images/images (145).jpg" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"/>
         </div>
@@ -603,7 +596,7 @@
         </div>
       </a>
 
-      <a href="detail.html?id=4" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700" data-cat="dessert">
+      <a href="../components/ditail/menu_detail29.html" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700" data-cat="dessert">
         <div class="h-48 overflow-hidden">
           <img src="../images/images (143).jpg" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"/>
         </div>
@@ -619,7 +612,7 @@
       </a>
 
       <!-- Mains -->
-      <a href="detail.html?id=2" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700 ring-2 ring-ember-300" data-cat="dessert">
+      <a href="../components/ditail/menu_detail30.html" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700 ring-2 ring-ember-300" data-cat="dessert">
         <div class="h-48 overflow-hidden relative">
           <img src="../images/images (142).jpg" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"/>
           <span class="absolute top-3 right-3 bg-ember-500 text-white text-xs px-3 py-1 rounded-full">⭐ Best Seller</span>
@@ -637,7 +630,7 @@
 
 
  <!-- Starters -->
-      <a href="detail.html?id=1" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700" data-cat="dessert">
+      <a href="../components/ditail/menu_detail31.html" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700" data-cat="dessert">
         <div class="h-48 overflow-hidden">
           <img src="../images/images (141).jpg" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"/>
         </div>
@@ -652,7 +645,7 @@
         </div>
       </a>
 
-      <a href="detail.html?id=4" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700" data-cat="starter">
+      <a href="../components/ditail/menu_detail32.html" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700" data-cat="starter">
         <div class="h-48 overflow-hidden">
           <img src="../images/images (78).jpg" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"/>
         </div>
@@ -668,7 +661,7 @@
       </a>
 
       <!-- Mains -->
-      <a href="detail.html?id=2" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700 ring-2 ring-ember-300" data-cat="main">
+      <a href="../components/ditail/menu_detail33.html" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700 ring-2 ring-ember-300" data-cat="main">
         <div class="h-48 overflow-hidden relative">
           <img src="../images/images (77).jpg" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"/>
           <span class="absolute top-3 right-3 bg-ember-500 text-white text-xs px-3 py-1 rounded-full">⭐ Best Seller</span>
@@ -686,7 +679,7 @@
 
 
  <!-- Starters -->
-      <a href="detail.html?id=1" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700" data-cat="starter">
+      <a href="../components/ditail/menu_detail34.html" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700" data-cat="starter">
         <div class="h-48 overflow-hidden">
           <img src="../images/images (76).jpg" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"/>
         </div>
@@ -701,7 +694,7 @@
         </div>
       </a>
 
-      <a href="detail.html?id=4" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700" data-cat="starter">
+      <a href="../components/ditail/menu_detail35.html" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700" data-cat="starter">
         <div class="h-48 overflow-hidden">
           <img src="../images/images (75).jpg" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"/>
         </div>
@@ -717,7 +710,7 @@
       </a>
 
       <!-- Mains -->
-      <a href="detail.html?id=2" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700 ring-2 ring-ember-300" data-cat="main">
+      <a href="../components/ditail/menu_detail36.html" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700 ring-2 ring-ember-300" data-cat="main">
         <div class="h-48 overflow-hidden relative">
           <img src="../images/images (67).jpg" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"/>
           <span class="absolute top-3 right-3 bg-ember-500 text-white text-xs px-3 py-1 rounded-full">⭐ Best Seller</span>
@@ -732,13 +725,9 @@
           </div>
         </div>
       </a>
-    
-
-     
-  
 
       <!-- Mains -->
-      <a href="detail.html?id=2" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700 ring-2 ring-ember-300" data-cat="main">
+      <a href="../components/ditail/menu_detail37.html" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700 ring-2 ring-ember-300" data-cat="main">
         <div class="h-48 overflow-hidden relative">
           <img src="../images/images (35).jpg" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"/>
           <span class="absolute top-3 right-3 bg-ember-500 text-white text-xs px-3 py-1 rounded-full">⭐ Best Seller</span>
@@ -756,7 +745,7 @@
 
 
  <!-- Starters -->
-      <a href="detail.html?id=1" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700" data-cat="starter">
+      <a href="../components/ditail/menu_detail38.html" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700" data-cat="starter">
         <div class="h-48 overflow-hidden">
           <img src="../images/images (19).jpg" class="w-full h-full object-cover hoclass="bg-white dark:bg-gray-800 text-black dark:text-whitever:scale-105 transition-transform duration-500"/>
         </div>
@@ -771,7 +760,7 @@
         </div>
       </a>
 
-      <a href="detail.html?id=4" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700" data-cat="starter">
+      <a href="../components/ditail/menu_detail39.html" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700" data-cat="starter">
         <div class="h-48 overflow-hidden">
           <img src="../images/images (34).jpg" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"/>
         </div>
@@ -787,7 +776,7 @@
       </a>
 
       <!-- Mains -->
-      <a href="detail.html?id=2" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700 ring-2 ring-ember-300" data-cat="drinks">
+      <a href="../components/ditail/menu_detail40.html" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700 ring-2 ring-ember-300" data-cat="drinks">
         <div class="h-48 overflow-hidden relative">
           <img src="../images/images (131).jpg" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"/>
           <span class="absolute top-3 right-3 bg-ember-500 text-white text-xs px-3 py-1 rounded-full">⭐ Best Seller</span>
@@ -805,7 +794,7 @@
 
 
  <!-- Starters -->
-      <a href="detail.html?id=1" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700" data-cat="drinks">
+      <a href="../components/ditail/menu_detail41.html" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700" data-cat="drinks">
         <div class="h-48 overflow-hidden">
           <img src="../images/images (129).jpg" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"/>
         </div>
@@ -820,7 +809,7 @@
         </div>
       </a>
 
-      <a href="detail.html?id=4" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700" data-cat="rrinks">
+      <a href="../components/ditail/menu_detail42.html" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700" data-cat="rrinks">
         <div class="h-48 overflow-hidden">
           <img src="../images/images (130).jpg" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"/>
         </div>
@@ -836,7 +825,7 @@
       </a>
 
       <!-- Mains -->
-      <a href="detail.html?id=2" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700 ring-2 ring-ember-300" data-cat="drinks">
+      <a href="../components/ditail/menu_detail43.html" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700 ring-2 ring-ember-300" data-cat="drinks">
         <div class="h-48 overflow-hidden relative">
           <img src="../images/images (128).jpg" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"/>
           <span class="absolute top-3 right-3 bg-ember-500 text-white text-xs px-3 py-1 rounded-full">⭐ Best Seller</span>
@@ -854,7 +843,7 @@
 
 
  <!-- Starters -->
-      <a href="detail.html?id=1" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700" data-cat="drinks">
+      <a href="../components/ditail/menu_detail44.html" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700" data-cat="drinks">
         <div class="h-48 overflow-hidden">
           <img src="../images/images (126).jpg" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"/>
         </div>
@@ -869,7 +858,7 @@
         </div>
       </a>
 
-      <a href="detail.html?id=4" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700" data-cat="drinks">
+      <a href="../components/ditail/menu_detail45.html" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700" data-cat="drinks">
         <div class="h-48 overflow-hidden">
           <img src="../images/images (124).jpg" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"/>
         </div>
@@ -885,7 +874,7 @@
       </a>
 
       <!-- Mains -->
-      <a href="detail.html?id=2" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700 ring-2 ring-ember-300" data-cat="drinks">
+      <a href="../components/ditail/menu_detail46.html" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700 ring-2 ring-ember-300" data-cat="drinks">
         <div class="h-48 overflow-hidden relative">
           <img src="../images/images (122).jpg" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"/>
           <span class="absolute top-3 right-3 bg-ember-500 text-white text-xs px-3 py-1 rounded-full">⭐ Best Seller</span>
@@ -901,9 +890,7 @@
         </div>
       </a>
 
-
- <!-- Starters -->
-      <a href="detail.html?id=1" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700" data-cat="drinks">
+      <a href="../components/ditail/menu_detail47.html" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700" data-cat="drinks">
         <div class="h-48 overflow-hidden">
           <img src="../images/images (120).jpg" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"/>
         </div>
@@ -918,7 +905,7 @@
         </div>
       </a>
 
-      <a href="detail.html?id=4" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700" data-cat="drinks">
+      <a href="../components/ditail/menu_detail49.html" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700" data-cat="drinks">
         <div class="h-48 overflow-hidden">
           <img src="../images/images (114).jpg" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"/>
         </div>
@@ -933,8 +920,7 @@
         </div>
       </a>
 
-      <!-- Mains -->
-      <a href="detail.html?id=2" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700 ring-2 ring-ember-300" data-cat="drinks">
+      <a href="../components/ditail/menu_detail50.html" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700 ring-2 ring-ember-300" data-cat="drinks">
         <div class="h-48 overflow-hidden relative">
           <img src="../images/images (116).jpg" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"/>
           <span class="absolute top-3 right-3 bg-ember-500 text-white text-xs px-3 py-1 rounded-full">⭐ Best Seller</span>
@@ -950,10 +936,7 @@
         </div>
       </a>
 
-
-
-
-      <a href="detail.html?id=5" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700" data-cat="drinks">
+      <a href="../components/ditail/menu_detail51.html" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700" data-cat="drinks">
         <div class="h-48 overflow-hidden">
           <img src="../images/images (115).jpg" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"/>
         </div>
@@ -968,9 +951,9 @@
         </div>
       </a>
 
-      <a href="detail.html?id=6" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700" data-cat="drinks">
+      <a href="../components/ditail/menu_detail52.html" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700" data-cat="drinks">
         <div class="h-48 overflow-hidden">
-          <img src="../images/images (114).jpg" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"/>
+          <img src="../images/images (112).jpg" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"/>
         </div>
         <div class="p-5">
           <span class="text-xs uppercase tracking-wider text-ember-500 font-medium">Main Course</span>
@@ -985,7 +968,7 @@
 
 
   <!-- Desserts -->
-      <a href="detail.html?id=3" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700" data-cat="drinks">
+      <a href="../components/ditail/menu_detail53.html" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700" data-cat="drinks">
         <div class="h-48 overflow-hidden">
           <img src="../images/images (113).jpg" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"/>
         </div>
@@ -1000,10 +983,10 @@
         </div>
       </a>
 
-      <!-- Drinks -->
+      <a href="../components/ditail/menu_detail54.html" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700" data-cat="drinks">
       <div class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700" data-cat="drinks">
         <div class="h-48 overflow-hidden">
-          <img src="../images/images (112).jpg" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"/>
+          <img src="../images/images (110).jpg" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"/>
         </div>
         <div class="p-5">
           <span class="text-xs uppercase tracking-wider text-ember-500 font-medium">​Drinks</span>
@@ -1015,9 +998,9 @@
           </div>
         </div>
       </div>
+      </a>
 
-
-
+    <a href="../components/ditail/menu_detail56.html" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700" data-cat="drinks">
       <div class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-lg border" data-cat="drinks">
         <div class="h-48 overflow-hidden">
           <img src="../images/images (111).jpg" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500 hover:shadow-2xl"/>
@@ -1032,14 +1015,14 @@
           </div>
         </div>
       </div>
-
+    </a>
 
 
 
  
 
   <!-- Mains -->
-      <a href="detail.html?id=2" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700 ring-2 ring-ember-300" data-cat="drinks">
+      <a href="../components/ditail/menu_detail57.html" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700 ring-2 ring-ember-300" data-cat="drinks">
         <div class="h-48 overflow-hidden relative">
           <img src="../images/images (209).jpg" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"/>
           <span class="absolute top-3 right-3 bg-ember-500 text-white text-xs px-3 py-1 rounded-full">⭐ Best Seller</span>
@@ -1055,10 +1038,7 @@
         </div>
       </a>
 
-
-
-
-      <a href="detail.html?id=5" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700" data-cat="drinks">
+      <a href="../components/ditail/menu_detail58.html" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700" data-cat="drinks">
         <div class="h-48 overflow-hidden">
           <img src="../images/images (208).jpg" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"/>
         </div>
@@ -1073,7 +1053,7 @@
         </div>
       </a>
 
-      <a href="detail.html?id=6" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700" data-cat="drinks">
+      <a href="../components/ditail/menu_detail59.html" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700" data-cat="drinks">
         <div class="h-48 overflow-hidden">
           <img src="../images/images (206).jpg" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"/>
         </div>
@@ -1088,7 +1068,7 @@
         </div>
       </a>
         <!-- Mains -->
-      <a href="detail.html?id=2" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700 ring-2 ring-ember-300" data-cat="drinks">
+      <a href="../components/ditail/menu_detail60.html" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700 ring-2 ring-ember-300" data-cat="drinks">
         <div class="h-48 overflow-hidden relative">
           <img src="../images/images (207).jpg" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"/>
           <span class="absolute top-3 right-3 bg-ember-500 text-white text-xs px-3 py-1 rounded-full">⭐ Best Seller</span>
@@ -1107,7 +1087,7 @@
 
 
 
-      <a href="detail.html?id=5" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700" data-cat="drinks">
+      <a href="../components/ditail/menu_detail60.html" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700" data-cat="drinks">
         <div class="h-48 overflow-hidden">
           <img src="../images/images (205).jpg" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"/>
         </div>
@@ -1122,7 +1102,7 @@
         </div>
       </a>
 
-      <a href="detail.html?id=6" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700" data-cat="drinks">
+      <a href="../components/ditail/menu_detail61.html" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700" data-cat="drinks">
         <div class="h-48 overflow-hidden">
           <img src="../images/images (204).jpg" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"/>
         </div>
@@ -1138,7 +1118,7 @@
       </a>
 
   <!-- Mains -->
-      <a href="detail.html?id=2" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700 ring-2 ring-ember-300" data-cat="drinks">
+      <a href="../components/ditail/menu_detail62.html" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700 ring-2 ring-ember-300" data-cat="drinks">
         <div class="h-48 overflow-hidden relative">
           <img src="../images/images (202).jpg" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"/>
           <span class="absolute top-3 right-3 bg-ember-500 text-white text-xs px-3 py-1 rounded-full">⭐ Best Seller</span>
@@ -1157,7 +1137,7 @@
 
 
 
-      <a href="detail.html?id=5" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700" data-cat="drinks">
+      <a href="../components/ditail/menu_detail63.html" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700" data-cat="drinks">
         <div class="h-48 overflow-hidden">
           <img src="../images/images (201).jpg" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"/>
         </div>
@@ -1172,7 +1152,7 @@
         </div>
       </a>
 
-      <a href="detail.html?id=6" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700" data-cat="drinks">
+      <a href="../components/ditail/menu_detail62.html" class="bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700" data-cat="drinks">
         <div class="h-48 overflow-hidden">
           <img src="../images/images (200).jpg" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"/>
         </div>
@@ -1188,17 +1168,17 @@
       </a>
 
   </section>
-  <footer>
+    <footer>
      <div class="mt-8 bg-orange-500 dark:bg-black pt-9 py-8 px-6 text-center text-sm transition-colors duration-300">
   <div class="mx-auto w-full max-w-[1166px] px-4 xl:px-0">
     <div class="flex flex-col justify-between sm:px-[18px] md:flex-row md:px-10">
       <div class="md:w-[316px]">
         <p class="text-[18px] font-medium text-white">
         <h1  class="text-black dark:text-white font-extrabold">
-          <span class="text-rose-600">YOUR</span>LOGO
+          <img src="../images/Liceria catering.png" alt="" width="100">
         </h1>
         </p>
-        <p class="mt-[18px] text-[15px] font-normal text-black/70 dark:text-white/80">A restaurant that offers a delicious dining experience and a cozy atmosphere. All dishes are cooked with fresh ingredients and special flavors that make you want to come back again and again. A great place to meet friends and family</p>
+        <p class="mt-[18px] text-[15px] font-normal text-white ">A restaurant that offers a delicious dining experience and a cozy atmosphere. All dishes are cooked with fresh ingredients and special flavors that make you want to come back again and again. A great place to meet friends and family</p>
         <div class="mt-[18px] flex gap-4">
            </div>
       </div>
@@ -1214,7 +1194,7 @@
 
           
           <div class="ml-[18px]">
-            <a href="tel:+911800123444" class="font-Inter text-[14px] font-medium text-black dark:text-white">+885: 070 965 815</a>
+            <a href="tel:+911800123444" class="font-Inter text-[14px] font-medium text-white">+885: 070 965 815</a>
             <p class="font-Inter text-[12px] font-medium text-white">Support Number</p>
           </div>
         </div>
@@ -1286,9 +1266,7 @@
     </div>
   </div>
 </div>
-  </footer>
-
-  
+</footer>>
 
   <script>
     // Theme
