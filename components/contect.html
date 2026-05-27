@@ -195,9 +195,9 @@
     .divider { width: 60px; height: 2px; background: linear-gradient(90deg,#e07520,#f5a455); margin: 1rem auto; }
   </style>
 </head>
-<body class="bg-white dark:to-black text-gray-900 dark:text-white min-h-screen transition-colors duration-300">
+<body class="bg-white dark:bg-gray-600 text-gray-900 dark:text-white min-h-screen transition-colors duration-300">
     <!-- Navigation -->
-    <nav class="fixed top-0 left-0 right-0 z-50 nav-blur bg-orange-500 dark:bg-oak-900/80 border-b border-oak-100 dark:border-oak-3000 ">
+    <nav class="fixed top-0 left-0 right-0 z-50 nav-blur bg-orange-500 dark:bg-gray-800 border-b border-oak-100 dark:border-oak-3000 ">
     <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
       <a href="index.html" class="font-display text-xl font-bold text-ember-700 dark:text-ember-300">Khmer <span class="text-orange-500"></span> Delicacy</a>
       <div class="hidden md:flex items-center gap-8 text-lg font-medium">
@@ -216,7 +216,7 @@
   </nav>
 
   <!-- HERO SECTION — full width -->
-  <section class="w-full bg-orange-400 dark:bg-black py-16 text-black dark:text-white pt-32">
+  <section class="w-full bg-orange-400 dark:bg-gray-700 py-16 text-black dark:text-white pt-32">
   <div class="w-full max-w-4xl mx-auto px-4 text-center">
     <h2 class="text-3xl md:text-4xl font-bold mb-6">
       Welcome to Khmer Delicacy
@@ -233,11 +233,11 @@
   </div>
 </section>
 
-  <div class="max-w-4xl mx-auto px-6 py-12 bg-white dark:bg-black dark:text-black">
+  <div class="max-w-4xl mx-auto px-6 py-12 bg-white dark:bg-gray-600 dark:text-black">
 
     <!-- STEP 1: Choose package -->
-    <div id="s1" class="step active fade-up">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div id="s1" class="step active fade-up bg-white dark:bg-gray-600">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 ">
 
         <!-- Solo -->
         <div class="pkg-card bg-white rounded-2xl overflow-hidden border border-warm-100" id="card-solo" onclick="pick('solo')">
@@ -485,7 +485,7 @@
 
 
   <!-- OPENING HOURS — full width -->
-  <section class="w-full bg-white dark:bg-black ">
+  <section class="w-full bg-white dark:bg-gray-600 ">
     <div class="hours-container text-black dark:text-white">
       <h2>Opening Hours</h2>
       <p class="hours-description text-black dark:text-white">
@@ -515,7 +515,7 @@
   </section>
 
    <footer>
-     <div class="mt-8 bg-orange-500 dark:bg-black pt-9 py-8 px-6 text-center text-sm transition-colors duration-300">
+     <div class="mt-8 bg-orange-500 dark:bg-gray-800 pt-9 py-8 px-6 text-center text-sm transition-colors duration-300">
   <div class="mx-auto w-full max-w-[1166px] px-4 xl:px-0">
     <div class="flex flex-col justify-between sm:px-[18px] md:flex-row md:px-10">
       <div class="md:w-[316px]">
@@ -640,9 +640,7 @@
       });
     });
   </script>
-<footer class="bg-warm-900 text-center py-8 text-warm-500 text-xs tracking-widest uppercase mt-12">
-    &copy; 2026 Ember &amp; Oak &mdash; All rights reserved
-  </footer>
+
 
   <script>
     const pkgs = {
