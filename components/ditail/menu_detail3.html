@@ -25,9 +25,9 @@
     .qty-btn { width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:bold;cursor:pointer;transition:background 0.2s; }
   </style>
 </head>
-<body class="bg-white dark:bg-black text-black dark:text-white transition-colors duration-300">
+<body class="bg-white dark:bg-gray-600 text-black dark:text-white transition-colors duration-300">
 l
-  <nav class="fixed top-0 left-0 right-0 z-50 nav-blur bg-orange-500 dark:bg-black border-b border-orange-100 dark:border-orange-300">
+  <nav class="fixed top-0 left-0 right-0 z-50 nav-blur bg-orange-500 dark:bg-gray-800 border-b border-orange-100 dark:border-orange-300">
     <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
       <a href="/index.html" class="font-display text-xl font-bold text-ember-700 dark:text-ember-300">Khmer</span> Delicacy</a>
       <div class="hidden md:flex items-center gap-8 text-lg font-medium">
@@ -81,7 +81,7 @@ l
 
         <p class="text-black dark:text-white leading-relaxed">
         Mchu Soup is a traditional Khmer sour soup made with fish, enhanced by tamarind, prahok (fermented fish paste), and mam (pickled fish). Balanced with palm sugar, salt, and a touch of sweetness, it offers a bold yet refreshing flavor that captures the essence of Khmer cuisine.</p>
-        <div class="bg-white dark:bg-black rounded-2xl p-5 border border-oak-100 dark:border-oak-700">
+        <div class="bg-white dark:bg-gray-700 rounded-2xl p-5 border border-oak-100 dark:border-oak-700">
           <p class="font-medium text-sm mb-3 text-orange-500 dark:text-white uppercase tracking-wider">Ingredients</p>
           <div class="grid grid-cols-2 gap-2 text-sm">
             <div class="flex items-center gap-2 text-black dark:text-white"><span class="w-1.5 h-1.5 rounded-full bg-black flex-shrink-0"></span>Fish</div>
@@ -100,13 +100,13 @@ l
             <span id="qty" class="text-lg font-medium w-6 text-center text-white">1</span>
             <button class="qty-btn hover:bg-orange-100 dark:hover:bg-orange-700 text-white" onclick="changeQty(1)">+</button>
           </div>
-          <button onclick="addToCart()" class="flex-1 py-3 bg-ember-500 hover:bg-ember-700 text-white rounded-full font-medium tracking-wide transition-colors shadow-md">
+          <button onclick="addToCart()" class="flex-1 py-3 bg-ember-500 hover:bg-orange-700  text-white rounded-full font-medium tracking-wide transition-colors shadow-md">
             Add to Order — <span id="totalPrice">$5</span>
           </button>
         </div>
 
         <!-- Success toast -->
-        <div id="toast" class="hidden bg-green-500 text-white text-sm px-4 py-3 rounded-xl text-center">
+        <div id="toast" class="hidden bg-orange-500  text-white text-sm px-4 py-3 rounded-xl text-center">
           ✓ Added to your order!
         </div>
       </div>
@@ -115,45 +115,45 @@ l
     <div class="mt-20">
       <h2 class="font-display text-3xl font-bold mb-8 text-center">You Might Also Like</h2>
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
-        <a href="../ditail/menu_detail17.html" class="bg-white dark:bg-oak-800 rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700 hover:-translate-y-1 transition-transform">
+        <a href="../ditail/menu_detail17.html" class="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700 hover:-translate-y-1 transition-transform">
           <img src="/images/images (1).jpg" class="w-full h-36 object-cover"/>
           <div class="p-4">
             <p class="font-display text-base text-orange-500 ">Bay Cha</p>
-            <p class="text-black text-sm mt-1">Golden rice with fresh parsley. Stir-fried meat with carrots and peppers. Fresh cucumbers and tomatoes for balance.</p>
+            <p class="text-black dark:text-white text-sm mt-1">Golden rice with fresh parsley. Stir-fried meat with carrots and peppers. Fresh cucumbers and tomatoes for balance.</p>
             <p class="text-ember-500 text-sm mt-1">$4</p></div>
         </a>
-        <a href="detail.html?id=5" class="bg-white dark:bg-oak-800 rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700 hover:-translate-y-1 transition-transform">
+        <a href="detail.html?id=5" class="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700 hover:-translate-y-1 transition-transform">
           <img src="/images/images (20).jpg" class="w-full h-36 object-cover"/>
           <div class="p-4"><p class="font-display text-base text-orange-500"> Beef Lok Lak</p>
-            <p class="text-black text-sm mt-1">“Beef Lok Lak is a Cambodian stir-fried beef dish served with lettuce, tomatoes, and onions, flavored with a savory sauce, salt and sugar,.</p>
+            <p class="text-black dark:text-white  text-sm mt-1">“Beef Lok Lak is a Cambodian stir-fried beef dish served with lettuce, tomatoes, and onions, flavored with a savory sauce, salt and sugar,.</p>
             <p class="text-ember-500 text-sm mt-1">$4</p></div>
         </a>
-        <a href="../ditail/menu_detail38.html" class="bg-white dark:bg-oak-800 rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700 hover:-translate-y-1 transition-transform">
+        <a href="../ditail/menu_detail38.html" class="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700 hover:-translate-y-1 transition-transform">
           <img src="/images/images (19).jpg" class="w-full h-36 object-cover"/>
           <div class="p-4"><p class="font-display text-base text-orange-500">Beef Soup with Prahok</p>
-            <p class="text-black text-sm mt-1">Beef soup with prahok is prepared with beef, carrots, eggplant, tomatoes, lime, lemongrass stalks, salt, and sugar.</p>
+            <p class="text-black dark:text-white text-sm mt-1">Beef soup with prahok is prepared with beef, carrots, eggplant, tomatoes, lime, lemongrass stalks, salt, and sugar.</p>
             <p class="text-orange-500 text-sm mt-1">$5</p></div>
         </a>
       </div>
     </div>
     <div class="mt-20">
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
-        <a href="../ditail/menu_detail5.html" class="bg-white dark:bg-oak-800 rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700 hover:-translate-y-1 transition-transform">
+        <a href="../ditail/menu_detail5.html" class="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700 hover:-translate-y-1 transition-transform">
           <img src="/images/images (18).jpg" class="w-full h-36 object-cover"/>
           <div class="p-4"><p class="font-display text-base​ text-orange-500">​Teuk Kreung</p>
-            <p class="text-black text-sm mt-1 ">Teuk Kreung is a Cambodian dip made with fish, prahok, garlic, peanuts, kaffir lime leaves, shallots, salt, and sugar, served with fresh vegetables such as sesbania flowers, water mimosa, eggplant, and lettuce.</p>
+            <p class="text-black dark:text-white text-sm mt-1 ">Teuk Kreung is a Cambodian dip made with fish, prahok, garlic, peanuts, kaffir lime leaves, shallots, salt, and sugar, served with fresh vegetables such as sesbania flowers, water mimosa, eggplant, and lettuce.</p>
             <p class="text-orange-500 text-sm mt-1">$4</p></div>
         </a>
-        <a href="../ditail/menu_detail12.html" class="bg-white dark:bg-oak-800 rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700 hover:-translate-y-1 transition-transform">
+        <a href="../ditail/menu_detail12.html" class="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700 hover:-translate-y-1 transition-transform">
           <img src="/images/images (34).jpg" class="w-full h-36 object-cover"/>
           <div class="p-4"><p class="font-display text-base text-orange-500">Num Banh Chok</p>
-            <p class="text-black text-sm mt-1">Num Banh Chok is served with curry soup, chicken, potatoes, curry spices, and fresh vegetables such as sesbania flowers, banana blossom, and bell peppers, seasoned with salt and sugar.</p>
+            <p class="text-black dark:text-white text-sm mt-1">Num Banh Chok is served with curry soup, chicken, potatoes, curry spices, and fresh vegetables such as sesbania flowers, banana blossom, and bell peppers, seasoned with salt and sugar.</p>
             <p class="text-orange-500 text-sm mt-1">$5</p></div>
         </a>
-        <a href="../ditail/menu_detail14.html" class="bg-white dark:bg-oak-800 rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700 hover:-translate-y-1 transition-transform">
+        <a href="../ditail/menu_detail14.html" class="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-sm border border-oak-100 dark:border-oak-700 hover:-translate-y-1 transition-transform">
           <img src="/images/images (33).jpg" class="w-full h-36 object-cover"/>
           <div class="p-4"><p class="font-display text-base​ text-orange-500">Steamed prahok</p>
-            <p class="text-black text-sm mt-1">Steamed prahok is made with fermented fish paste, duck eggs, garlic, sugar, and salt, and is served with vegetables such as eggplant, yardlong beans, cucumber, carrot, and neem flowers.</p>
+            <p class="text-black  dark:text-white text-sm mt-1">Steamed prahok is made with fermented fish paste, duck eggs, garlic, sugar, and salt, and is served with vegetables such as eggplant, yardlong beans, cucumber, carrot, and neem flowers.</p>
             <p class="text-orange-500 text-sm mt-1">$5</p></div>
         </a>
       </div>
@@ -162,7 +162,7 @@ l
   </main>
 
   <footer class=" py-5 px-6 text-center text-lg">
-    <div class="mt-8 bg-orange-500 dark:bg-black pt-9 py-8 px-6 text-center text-sm transition-colors duration-300 border-orange-500 dark:border-orange-500">
+    <div class="mt-8 bg-orange-500 dark:bg-gray-800 pt-9 py-8 px-6 text-center text-sm transition-colors duration-300 border-orange-500 dark:border-orange-500">
   <div class="mx-auto w-full max-w-[1166px] px-4 xl:px-0">
     <div class="flex flex-col justify-between sm:px-[18px] md:flex-row md:px-10 ">
       <div class="md:w-[316px]">
